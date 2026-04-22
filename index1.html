@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Livmore Luxury</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+<style>
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: #000;
+  color: #fff;
+}
+
+/* NAVBAR */
+nav {
+  position: fixed;
+  width: 100%;
+  padding: 20px 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(0,0,0,0.7);
+}
+
+nav img {
+  height: 50px;
+}
+
+nav a {
+  color: white;
+  margin-left: 20px;
+  text-decoration: none;
+}
+
+/* HERO */
+.hero {
+  height: 100vh;
+  background: url('https://images.unsplash.com/photo-1618221195710-dd6b41faaea6') no-repeat center/cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 60px;
+}
+
+.hero p {
+  font-size: 20px;
+}
+
+/* SECTION */
+.section {
+  padding: 80px 50px;
+  text-align: center;
+}
+
+.section h2 {
+  font-size: 40px;
+}
+
+/* GRID */
+.grid {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.card {
+  background: #111;
+  padding: 30px;
+  border-radius: 10px;
+  width: 280px;
+}
+
+/* GALLERY */
+.gallery img {
+  width: 300px;
+  border-radius: 10px;
+}
+
+/* FOOTER */
+footer {
+  background: #111;
+  padding: 30px;
+  text-align: center;
+}
+</style>
+
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav>
+  <!-- ADD YOUR LOGO IMAGE HERE -->
+  <img src="logo.png" alt="Livmore Luxury Logo">
+
+  <div>
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#">Projects</a>
+    <a href="#">Contact</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div>
+    <h1>Your Vision Our Design</h1>
+    <p>Luxury Interior Design Studio</p>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<div class="section">
+  <h2>About Us</h2>
+  <p>We create premium interior spaces with elegance, innovation, and functionality.</p>
+</div>
+
+<!-- SERVICES -->
+<div class="section">
+  <h2>Our Services</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Home Interiors</h3>
+      <p>Luxury home design solutions tailored to your lifestyle.</p>
+    </div>
+    <div class="card">
+      <h3>Office Interiors</h3>
+      <p>Modern and efficient workspace design.</p>
+    </div>
+    <div class="card">
+      <h3>Turnkey Projects</h3>
+      <p>Complete end-to-end interior execution.</p>
+    </div>
+  </div>
+</div>
+
+<!-- PROJECTS -->
+<div class="section gallery">
+  <h2>Our Projects</h2>
+  <div class="grid">
+    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c">
+    <img src="https://images.unsplash.com/photo-1600210492493-0946911123ea">
+    <img src="https://images.unsplash.com/photo-1618220179428-22790b461013">
+  </div>
+</div>
+
+<!-- CONTACT -->
+<div class="section">
+  <h2>Contact Us</h2>
+  <p>📍 Plot No.1282/A, Road No 64, Jubilee Hills, Hyderabad - 500033</p>
+  <p>📞 +91 9666760679</p>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 Livmore Luxury</p>
+</footer>
+
+</body>
+</html>
