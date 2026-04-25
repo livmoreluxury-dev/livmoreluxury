@@ -3,135 +3,132 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LIVMORE LUXURY | Interior Architecture</title>
+    <title>LIVMORE LUXURY | Bespoke Interior Architecture</title>
     
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Montserrat:wght@200;300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:wght@200;300;400;500;600&display=swap" rel="stylesheet">
 
     <style>
         :root {
             --midnight: #080C14; 
             --gold: #C5A059;     
             --white: #ffffff;
-            --soft-gray: #f4f4f4;
-            --transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+            --smoke: #F8F8F5;
+            --transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Montserrat', sans-serif; background: var(--white); color: var(--midnight); overflow-x: hidden; }
-        
-        /* --- REFINED CURSOR --- */
-        #custom-cursor {
-            width: 8px; height: 8px; background: var(--gold);
-            position: fixed; border-radius: 50%; pointer-events: none;
-            z-index: 10000; mix-blend-mode: difference; transition: transform 0.2s;
-        }
+        body { font-family: 'Montserrat', sans-serif; background: var(--white); color: var(--midnight); overflow-x: hidden; scroll-behavior: smooth; }
+        h1, h2, h3, h4 { font-family: 'Cinzel', serif; letter-spacing: 2px; }
+
+        /* --- THE ELITE CURSOR --- */
+        #dot { width: 8px; height: 8px; background: var(--gold); position: fixed; border-radius: 50%; pointer-events: none; z-index: 10000; mix-blend-mode: difference; }
 
         /* --- NAVIGATION --- */
         nav {
-            position: fixed; top: 0; width: 100%; padding: 20px 5%;
+            position: fixed; top: 0; width: 100%; padding: 20px 6%;
             display: flex; justify-content: space-between; align-items: center;
             z-index: 1000; background: rgba(8, 12, 20, 0.98); border-bottom: 1px solid rgba(197, 160, 89, 0.2);
+            backdrop-filter: blur(15px);
         }
-        .logo img { height: 55px; }
-        .nav-links { display: flex; gap: 30px; align-items: center; }
-        .nav-links a { 
-            text-decoration: none; color: var(--white); font-size: 0.7rem; 
-            letter-spacing: 2px; text-transform: uppercase; font-weight: 500;
-        }
+        .logo img { height: 50px; }
+        .nav-links { display: flex; gap: 30px; }
+        .nav-links a { text-decoration: none; color: var(--white); font-size: 0.7rem; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; cursor: pointer; transition: 0.3s; }
+        .nav-links a:hover { color: var(--gold); }
 
-        .dropdown { position: relative; cursor: pointer; }
+        .dropdown { position: relative; }
         .dropdown-menu {
             display: none; position: absolute; top: 100%; left: 0;
-            background: var(--midnight); min-width: 220px; padding: 15px 0;
-            border: 1px solid var(--gold);
+            background: var(--midnight); min-width: 260px; border: 1px solid var(--gold); padding: 10px 0;
         }
-        .dropdown-menu a { padding: 10px 20px; display: block; font-size: 0.65rem; }
+        .dropdown-menu a { display: block; padding: 12px 20px; font-size: 0.65rem; color: white; border-bottom: 1px solid rgba(255,255,255,0.05); }
         .dropdown:hover .dropdown-menu { display: block; }
 
         /* --- HERO --- */
         .hero {
-            height: 90vh; background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
-            url('https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&q=80&w=2000') center/cover no-repeat;
+            height: 100vh; background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=2000') center/cover no-repeat;
             display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; color: white;
         }
-        .hero h1 { font-family: 'Cinzel'; font-size: 5rem; letter-spacing: 12px; margin-bottom: 10px; }
-        .hero p { font-size: 1rem; letter-spacing: 6px; text-transform: uppercase; color: var(--gold); }
+        .hero h1 { font-size: clamp(3rem, 10vw, 7rem); letter-spacing: 15px; margin-bottom: 10px; }
+        .hero p { color: var(--gold); letter-spacing: 10px; text-transform: uppercase; font-size: 1.1rem; }
 
-        /* --- CORE CONTENT SECTIONS --- */
-        section { padding: 100px 10%; position: relative; }
-        .reveal { opacity: 0; transform: translateY(30px); transition: var(--transition); }
+        /* --- SECTION BASE --- */
+        section { padding: 100px 10%; }
+        .reveal { opacity: 0; transform: translateY(40px); transition: var(--transition); }
         .reveal.active { opacity: 1; transform: translateY(0); }
 
-        .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; margin-top: 40px; }
-        .about-card h2 { font-family: 'Cinzel'; color: var(--gold); margin-bottom: 20px; font-size: 2rem; }
-        .about-card p { font-weight: 300; line-height: 1.8; color: #444; }
+        /* --- VISION / MISSION / WHY US (4 LINE EXPERT COPY) --- */
+        .pillars-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 50px; margin-top: 50px; }
+        .pillar-card h2 { font-size: 1.8rem; color: var(--gold); margin-bottom: 20px; border-bottom: 1px solid var(--gold); display: inline-block; padding-bottom: 5px; }
+        .pillar-card p { font-size: 1rem; font-weight: 300; line-height: 1.8; color: #444; }
 
-        /* --- SIGNATURE GALLERY (CLEAN & SCALEABLE) --- */
-        .gallery-container { background: #0c121d; color: white; padding: 100px 5%; }
-        .gallery-title { font-family: 'Cinzel'; font-size: 2.5rem; color: var(--gold); margin-bottom: 50px; text-align: center; }
-        
-        .gallery-grid {
-            display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px;
+        /* --- THE WAVE ROADMAP (IMPROVED FLUIDITY) --- */
+        .roadmap-wave-wrap { background: var(--smoke); padding: 120px 5%; overflow: hidden; position: relative; }
+        .wave-line { position: absolute; top: 50%; left: 0; width: 100%; height: 2px; background: rgba(197, 160, 89, 0.2); z-index: 1; }
+        .wave-steps { display: flex; justify-content: space-around; position: relative; z-index: 2; padding: 60px 0; }
+        .wave-step { width: 18%; text-align: center; }
+        .wave-step:nth-child(odd) { transform: translateY(-50px); }
+        .wave-step:nth-child(even) { transform: translateY(50px); }
+        .step-blob { 
+            width: 70px; height: 70px; background: var(--midnight); border: 2px solid var(--gold); 
+            border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%; /* Wave-like shape */
+            display: flex; align-items: center; justify-content: center; margin: 0 auto 20px;
+            color: var(--gold); font-family: 'Cinzel'; font-size: 1.2rem; font-weight: bold;
         }
-        .work-item { 
-            height: 350px; overflow: hidden; position: relative; cursor: pointer;
-            border: 1px solid rgba(197, 160, 89, 0.1); 
-        }
-        .work-item img { width: 100%; height: 100%; object-fit: cover; transition: 1s; }
-        .work-item:hover img { transform: scale(1.1); filter: brightness(0.6); }
-        
-        .work-label {
-            position: absolute; bottom: 20px; left: 20px; opacity: 0; transition: 0.4s;
-        }
-        .work-item:hover .work-label { opacity: 1; }
-        .work-label h4 { font-family: 'Cinzel'; color: var(--gold); font-size: 0.9rem; }
+        .wave-step h4 { font-size: 0.9rem; color: var(--gold); margin-bottom: 10px; }
+        .wave-step p { font-size: 0.75rem; color: #666; }
 
-        /* --- ROADMAP (CLEAN & NON-OVERLAPPING) --- */
-        .roadmap-wrap { padding: 120px 10%; background: var(--soft-gray); }
-        .roadmap-item {
-            display: flex; align-items: flex-start; gap: 40px; margin-bottom: 60px;
-            padding-bottom: 40px; border-bottom: 1px solid #ddd;
-        }
-        .step-num { font-family: 'Cinzel'; font-size: 3rem; color: var(--gold); opacity: 0.4; min-width: 80px; }
-        .step-content h3 { font-family: 'Cinzel'; margin-bottom: 10px; letter-spacing: 2px; }
-        .step-content p { color: #666; font-size: 0.95rem; line-height: 1.6; max-width: 700px; }
+        /* --- DYNAMIC GALLERY (FIXED IMAGES) --- */
+        .gallery-container { background: var(--midnight); color: white; padding: 100px 5%; }
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; }
+        .work-item { height: 400px; overflow: hidden; position: relative; border: 1px solid rgba(197, 160, 89, 0.1); }
+        .work-item img { width: 100%; height: 100%; object-fit: cover; transition: 1.5s; opacity: 0.9; }
+        .work-item:hover img { transform: scale(1.1); opacity: 0.5; }
+        .work-tag { position: absolute; bottom: 25px; left: 25px; color: var(--gold); font-family: 'Cinzel'; font-size: 1rem; text-shadow: 2px 2px 4px black; }
 
-        /* --- FOOTER (THE STUDIO HUB) --- */
-        footer { background: var(--midnight); color: var(--white); padding: 80px 10%; }
-        .footer-main { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 40px; }
-        .footer-logo { font-family: 'Cinzel'; font-size: 2rem; color: var(--gold); margin-bottom: 20px; }
-        .footer-box h4 { color: var(--gold); font-size: 0.8rem; letter-spacing: 2px; margin-bottom: 20px; text-transform: uppercase; }
-        .footer-box p, .footer-box a { color: #aaa; text-decoration: none; font-size: 0.9rem; line-height: 2; display: block; }
-        .footer-box a:hover { color: var(--gold); }
+        /* --- DEEP DIVE BLOGS (REAL ESTATE / CONSTRUCTION) --- */
+        .blog-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: var(--midnight); z-index: 3000; overflow-y: auto; padding: 100px 10%; color: white; }
+        .close-blog { position: fixed; top: 40px; right: 40px; color: var(--gold); font-size: 2.5rem; cursor: pointer; z-index: 3001; }
+        .blog-content { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+        .blog-img { height: 500px; border: 1px solid var(--gold); background-size: cover; background-position: center; }
 
-        @media (max-width: 768px) {
-            .about-grid { grid-template-columns: 1fr; }
-            .hero h1 { font-size: 2.5rem; }
-            .nav-links { display: none; }
+        /* --- THE BOAT (FLOATING CONTACT) --- */
+        .boat-nav {
+            position: fixed; bottom: 35px; left: 50%; transform: translateX(-50%);
+            background: rgba(8, 12, 20, 0.95); border: 1px solid var(--gold); padding: 15px 45px;
+            display: flex; gap: 40px; border-radius: 50px; z-index: 2000; box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+            backdrop-filter: blur(10px);
         }
+        .boat-nav a { color: var(--white); text-decoration: none; font-size: 0.75rem; font-weight: 600; letter-spacing: 2px; }
+        .boat-nav a:hover { color: var(--gold); }
+
+        /* --- FOOTER --- */
+        footer { background: var(--midnight); color: var(--white); padding: 100px 10% 140px; border-top: 3px solid var(--gold); }
+        .footer-grid { display: grid; grid-template-columns: 2fr 1.5fr 1.5fr; gap: 60px; }
+        .footer-box b { color: var(--gold); display: block; margin-bottom: 15px; text-transform: uppercase; font-size: 0.9rem; }
+        .footer-box p, .footer-box a { color: #888; text-decoration: none; font-size: 0.9rem; line-height: 2; }
     </style>
 </head>
 <body>
 
-<div id="custom-cursor"></div>
+<div id="dot"></div>
 
 <nav>
-    <div class="logo"><img src="image_ef35bf.png" alt="LIVMORE"></div>
+    <div class="logo"><img src="image_ef35bf.png" alt="LIVMORE LUXURY"></div>
     <div class="nav-links">
         <a href="#home">Home</a>
         <div class="dropdown">
             <a>Interior Design ▾</a>
             <div class="dropdown-menu">
-                <a href="#gallery" onclick="filterGallery('Kitchen')">Gola Kitchen</a>
-                <a href="#gallery" onclick="filterGallery('Puja')">Profile Puja Unit</a>
-                <a href="#gallery" onclick="filterGallery('Wardrobe')">Bespoke Wardrobes</a>
-                <a href="#gallery" onclick="filterGallery('Living')">Living & TV Units</a>
-                <a href="#gallery" onclick="filterGallery('Ceiling')">Veneer Ceilings</a>
+                <a onclick="filterPort('Kitchen')">Gola Kitchen</a>
+                <a onclick="filterPort('Puja')">Profile Puja Unit</a>
+                <a onclick="filterPort('Wardrobe')">Bespoke Wardrobe</a>
+                <a onclick="filterPort('Living')">Living TV Units</a>
+                <a onclick="filterPort('Ceiling')">Veneer Ceilings</a>
             </div>
         </div>
-        <a href="javascript:void(0)" onclick="blogAim('Real Estate')">Real Estate</a>
-        <a href="javascript:void(0)" onclick="blogAim('Construction')">Construction</a>
-        <a href="#about">The Studio</a>
+        <a onclick="openBlog('Real Estate')">Real Estate</a>
+        <a onclick="openBlog('Construction')">Construction</a>
+        <a href="#about">About</a>
     </div>
 </nav>
 
@@ -143,129 +140,125 @@
 </section>
 
 <section id="about" class="reveal">
-    <div class="about-grid">
-        <div class="about-card">
-            <h2>The Vision</h2>
-            <p>To redefine luxury living through architectural precision and ancestral craftsmanship. We curate homes that are not just lived in, but celebrated as extensions of personal prestige.</p>
+    <div class="pillars-grid">
+        <div class="pillar-card">
+            <h2>Our Vision</h2>
+            <p>To redefine luxury living through architectural precision and ancestral craftsmanship.<br>We curate homes that act as a celebrated extension of your personal prestige.<br>By 2030, we aim to be the gold standard for high-end residential interiors in India.<br>At Livmore, we don't build interiors; we architect life-long legacies.</p>
         </div>
-        <div class="about-card">
-            <h2>The Mission</h2>
-            <p>Our goal is 100% transparency. By using advanced 3D visualization and itemized technical blueprints, we ensure our clients have absolute clarity before execution begins.</p>
+        <div class="pillar-card">
+            <h2>Our Mission</h2>
+            <p>Our goal is 100% transparency through itemized technical blueprints and zero-hidden costs.<br>We utilize advanced 3D visual synthesis to eliminate the uncertainty of home renovation.<br>We are committed to 'Zero-Snag' handovers that prioritize quality over construction speed.<br>Integrity is our foundation; aesthetic perfection is our final deliverable.</p>
+        </div>
+        <div class="pillar-card">
+            <h2>Why Select Us</h2>
+            <p>With 40 years of collective intelligence, we master the balance of form and function.<br>Our factory-finished modular units use high-grade HPL laminates that resist time and wear.<br>Every project is managed by a dedicated studio concierge for a seamless client journey.<br>Choose us because your sanctuary deserves structural honesty and bespoke elegance.</p>
         </div>
     </div>
 </section>
 
-<div id="gallery" class="gallery-container">
-    <h2 class="gallery-title">The Signature Series</h2>
-    <div class="gallery-grid" id="main-gallery">
-        <div class="work-item" data-cat="Kitchen"><img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?q=80&w=600" alt="Kitchen"><div class="work-label"><h4>Gola Kitchen</h4></div></div>
-        <div class="work-item" data-cat="Puja"><img src="https://images.unsplash.com/photo-1601053073708-bb6b0d95d852?q=80&w=600" alt="Puja"><div class="work-label"><h4>Tall Puja Unit</h4></div></div>
-        <div class="work-item" data-cat="Wardrobe"><img src="https://images.unsplash.com/photo-1595428774223-ef52624120d2?q=80&w=600" alt="Wardrobe"><div class="work-label"><h4>Laminated Wardrobe</h4></div></div>
-        <div class="work-item" data-cat="Wardrobe"><img src="https://images.unsplash.com/photo-1558997519-83ec7c027440?q=80&w=600" alt="Sliding"><div class="work-label"><h4>Sliding Glass Wardrobe</h4></div></div>
-        <div class="work-item" data-cat="Wardrobe"><img src="https://images.unsplash.com/photo-1616594039964-ae9021a400a0?q=80&w=600" alt="PU"><div class="work-label"><h4>PU Finish Wardrobe</h4></div></div>
-        <div class="work-item" data-cat="Living"><img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=600" alt="TV Unit"><div class="work-label"><h4>TV Unit Paneling</h4></div></div>
-        <div class="work-item" data-cat="Ceiling"><img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&w=600" alt="Ceiling"><div class="work-label"><h4>Veneer Ceiling</h4></div></div>
-        <div class="work-item" data-cat="Living"><img src="https://images.unsplash.com/photo-1593508512255-86ab42a8e620?q=80&w=600" alt="Living"><div class="work-label"><h4>Living Wall Panel</h4></div></div>
-        <div class="work-item" data-cat="Kitchen"><img src="https://images.unsplash.com/photo-1556912177-c54030639a6d?q=80&w=600" alt="Kitchen 2"><div class="work-label"><h4>Modern Gola Layout</h4></div></div>
-        <div class="work-item" data-cat="Ceiling"><img src="https://images.unsplash.com/photo-1534349762230-e0cadf78f5db?q=80&w=600" alt="Ceiling 2"><div class="work-label"><h4>Profile LED Ceiling</h4></div></div>
+<section class="roadmap-wave-wrap reveal">
+    <h2 style="text-align: center; margin-bottom: 60px; font-size: 2.5rem;">The Roadmap</h2>
+    <div class="wave-line"></div>
+    <div class="wave-steps">
+        <div class="wave-step"><div class="step-blob">01</div><h4>Dialogue</h4><p>Analyzing lifestyle and architectural DNA.</p></div>
+        <div class="wave-step"><div class="step-blob">02</div><h4>Blueprint</h4><p>Full itemized quotes and engineering drawings.</p></div>
+        <div class="wave-step"><div class="step-blob">03</div><h4>Synthesis</h4><p>Photorealistic 3D virtual walkthroughs.</p></div>
+        <div class="wave-step"><div class="step-blob">04</div><h4>Execution</h4><p>Precision factory finishing and integration.</p></div>
+        <div class="wave-step"><div class="step-blob">05</div><h4>Legacy</h4><p>Final handover and lifetime support promise.</p></div>
+    </div>
+</section>
+
+<div id="gallery" class="gallery-container reveal">
+    <h2 style="text-align: center; font-family: 'Cinzel'; color: var(--gold); margin-bottom: 50px;">Signature Portfolio</h2>
+    <div class="gallery-grid" id="main-port">
+        <div class="work-item" data-cat="Kitchen"><img src="image_ede3a0.png"><div class="work-tag">Gola Kitchen</div></div>
+        <div class="work-item" data-cat="Puja"><img src="image_ee3a17.png"><div class="work-tag">Profile Puja Unit</div></div>
+        <div class="work-item" data-cat="Wardrobe"><img src="image_ee423a.png"><div class="work-tag">Laminated Wardrobe</div></div>
+        <div class="work-item" data-cat="Wardrobe"><img src="image_ef29d8.png"><div class="work-tag">Sliding Glass Wardrobe</div></div>
+        <div class="work-item" data-cat="Wardrobe"><img src="image_ef2a1f.png"><div class="work-tag">PU Finish Wardrobe</div></div>
+        <div class="work-item" data-cat="Living"><img src="https://images.unsplash.com/photo-1593508512255-86ab42a8e620?q=80&w=800"><div class="work-tag">Living TV Unit</div></div>
+        <div class="work-item" data-cat="Ceiling"><img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&w=800"><div class="work-tag">Veneer Ceiling Work</div></div>
+        <div class="work-item" data-cat="Living"><img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=800"><div class="work-tag">Wall Paneling</div></div>
+        <div class="work-item" data-cat="Ceiling"><img src="https://images.unsplash.com/photo-1534349762230-e0cadf78f5db?q=80&w=800"><div class="work-tag">Architectural Ceiling</div></div>
+        <div class="work-item" data-cat="Living"><img src="https://images.unsplash.com/photo-1558997519-83ec7c027440?q=80&w=800"><div class="work-tag">Integrated Media Wall</div></div>
     </div>
 </div>
 
-<section id="process" class="roadmap-wrap">
-    <h2 style="font-family: 'Cinzel'; text-align: center; margin-bottom: 80px; font-size: 2.5rem;">The Roadmap</h2>
-    
-    <div class="roadmap-item reveal">
-        <div class="step-num">01</div>
-        <div class="step-content">
-            <h3>Initial Dialogue</h3>
-            <p>We begin by understanding your lifestyle, spatial flow, and aesthetic aspirations to define the project's unique DNA.</p>
+<div id="blog" class="blog-overlay">
+    <span class="close-blog" onclick="closeBlog()">×</span>
+    <h2 id="blog-title" style="font-size: 3.5rem; color: var(--gold); margin-bottom: 30px;"></h2>
+    <div class="blog-content">
+        <div id="blog-img" class="blog-img"></div>
+        <div>
+            <h3 style="margin-bottom: 20px; font-size: 1.5rem;">Our Aim & Vision</h3>
+            <p id="blog-text" style="font-size: 1.2rem; line-height: 2; opacity: 0.8;"></p>
+            <div style="margin-top: 40px; border: 1px solid var(--gold); padding: 20px 40px; display: inline-block;">
+                <span style="color: var(--gold); letter-spacing: 5px; font-weight: bold;">LAUNCHING SOON</span>
+            </div>
         </div>
     </div>
+</div>
 
-    <div class="roadmap-item reveal">
-        <div class="step-num">02</div>
-        <div class="step-content">
-            <h3>Technical Blueprint</h3>
-            <p>We provide itemized quotes and technical engineering drawings. No hidden costs, just absolute transparency.</p>
-        </div>
-    </div>
-
-    <div class="roadmap-item reveal">
-        <div class="step-num">03</div>
-        <div class="step-content">
-            <h3>Visual Synthesis</h3>
-            <p>Our studio creates photorealistic 3D renders, allowing you to walk through your design before a single brick is moved.</p>
-        </div>
-    </div>
-
-    <div class="roadmap-item reveal">
-        <div class="step-num">04</div>
-        <div class="step-content">
-            <h3>Precision Execution</h3>
-            <p>Factory-finished modular units and on-site integration managed by our veteran structural engineers.</p>
-        </div>
-    </div>
-
-    <div class="roadmap-item reveal">
-        <div class="step-num">05.</div>
-        <div class="step-content">
-            <h3>Handover</h3>
-            <p>A snag-free delivery of your bespoke space, complete with maintenance documentation and our lifetime support promise.</p>
-        </div>
-    </div>
-</section>
+<div class="boat-nav">
+    <a href="tel:+917659855099">CALL STUDIO</a>
+    <a href="mailto:livmoreluxury@gmail.com">EMAIL</a>
+    <a href="#gallery">GALLERY</a>
+</div>
 
 <footer>
-    <div class="footer-main">
-        <div class="footer-box" style="flex: 2;">
-            <div class="footer-logo">LIVMORE LUXURY</div>
-            <p>Jubilee Hills' premier interior architecture firm. Bridging the gap between structural engineering and high-end aesthetics.</p>
+    <div class="footer-grid">
+        <div class="footer-box">
+            <h2 style="color: var(--gold); font-family: 'Cinzel';">LIVMORE</h2>
+            <p style="margin-top: 15px;">Premier Interior Architecture Studio. Jubilee Hills, Hyderabad.</p>
         </div>
         <div class="footer-box">
-            <h4>The Studio</h4>
+            <b>Studio Location</b>
             <p>Plot No.1282/A, Road No 64,<br>Jubilee Hills, Hyderabad,<br>Telangana - 500033</p>
         </div>
         <div class="footer-box">
-            <h4>Inquiries</h4>
-            <a href="mailto:livmoreluxury@gmail.com">livmoreluxury@gmail.com</a>
-            <a href="tel:+917659855099">+91 7659855099</a>
+            <b>Inquiries</b>
+            <p>+91 7659855099<br>livmoreluxury@gmail.com</p>
         </div>
     </div>
-    <div style="border-top: 1px solid #333; margin-top: 60px; padding-top: 30px; text-align: center; color: #555; font-size: 0.7rem;">
-        © 2026 LIVMORE LUXURY. ALL RIGHTS RESERVED.
-    </div>
+    <p style="text-align: center; margin-top: 80px; font-size: 0.7rem; color: #444;">© 2026 LIVMORE LUXURY. ALL RIGHTS RESERVED.</p>
 </footer>
 
 <script>
-    // Cursor Logic
-    const cursor = document.getElementById('custom-cursor');
-    document.addEventListener('mousemove', e => {
-        cursor.style.left = e.clientX + 'px';
-        cursor.style.top = e.clientY + 'px';
-    });
+    // Cursor
+    const dot = document.getElementById('dot');
+    document.addEventListener('mousemove', e => { dot.style.left = e.clientX+'px'; dot.style.top = e.clientY+'px'; });
 
-    // Reveal Logic
-    const reveals = document.querySelectorAll('.reveal');
+    // Scroll Reveal
     const observer = new IntersectionObserver(entries => {
         entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('active'); });
     }, { threshold: 0.1 });
-    reveals.forEach(r => observer.observe(r));
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-    // Gallery Filter Logic
-    function filterGallery(category) {
+    // Gallery Filter
+    function filterPort(cat) {
+        document.getElementById('gallery').scrollIntoView();
         const items = document.querySelectorAll('.work-item');
-        items.forEach(item => {
-            if(item.getAttribute('data-cat') === category || category === 'all') {
-                item.style.display = 'block';
-            } else {
-                item.style.display = 'none';
-            }
+        items.forEach(i => {
+            i.style.display = i.dataset.cat.includes(cat) ? 'block' : 'none';
         });
     }
 
-    function blogAim(title) {
-        alert("LIVMORE BLOG: Our aim in " + title + " is to educate clients on structural integrity and investment value. Launching Soon.");
+    // Blog Control
+    function openBlog(type) {
+        document.getElementById('blog').style.display = 'block';
+        document.getElementById('blog-title').innerText = type;
+        const text = document.getElementById('blog-text');
+        const img = document.getElementById('blog-img');
+
+        if(type === 'Real Estate') {
+            img.style.backgroundImage = "url('https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=1000')";
+            text.innerText = "Our aim is to bring architectural clarity to high-end land acquisition. We provide technical site audits and investment intelligence to ensure your future residence starts with structural integrity.";
+        } else {
+            img.style.backgroundImage = "url('https://images.unsplash.com/photo-1503387762-592dea58ef23?q=80&w=1000')";
+            text.innerText = "Construction at Livmore is a structural religion. Our aim is to build high-standard structural legacies using advanced seismic-resistant technology and premium, laboratory-tested materials.";
+        }
     }
+    function closeBlog() { document.getElementById('blog').style.display = 'none'; }
 </script>
 
 </body>
