@@ -9,335 +9,181 @@
 
     <style>
         :root {
-            --midnight: #0F172A;   /* The Deep Navy from your image */
-            --gold: #C5A059;       /* The Luxury Gold from your logo */
-            --off-white: #FAF9F6;  /* Soft paper background */
+            --midnight: #0F172A; /* Precise Navy from your reference */
+            --gold: #C5A059;     /* Signature Gold */
+            --ivory: #FAF9F6;
             --white: #ffffff;
-            --transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+            --transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
         html { scroll-behavior: smooth; }
+        body { font-family: 'Montserrat', sans-serif; background: var(--ivory); color: var(--midnight); overflow-x: hidden; }
+        h1, h2, h3, h4 { font-family: 'Cinzel', serif; }
 
-        body {
-            font-family: 'Montserrat', sans-serif;
-            background-color: var(--off-white);
-            color: var(--midnight);
-            overflow-x: hidden;
-        }
-
-        /* --- NAVIGATION: PRECISE BRANDING --- */
+        /* --- NAVIGATION: Navy Header Reference --- */
         nav {
-            position: fixed;
-            top: 0; width: 100%;
-            padding: 10px 6%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            z-index: 1000;
-            background: var(--midnight); 
-            border-bottom: 2px solid var(--gold);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            position: fixed; top: 0; width: 100%; padding: 10px 6%;
+            display: flex; justify-content: space-between; align-items: center;
+            z-index: 1000; background: var(--midnight); border-bottom: 2px solid var(--gold);
         }
-
-        .logo-box { display: flex; align-items: center; }
-        /* Using your file name exactly as provided */
-        .logo-img { height: 75px; width: auto; object-fit: contain; } 
-
-        .nav-links { display: flex; gap: 35px; }
-        .nav-links a {
-            text-decoration: none;
-            color: var(--white);
-            font-weight: 500;
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
+        .logo img { height: 75px; width: auto; object-fit: contain; }
+        
+        .nav-links { display: flex; align-items: center; gap: 30px; }
+        .nav-links a { 
+            text-decoration: none; color: var(--white); font-size: 0.8rem; 
+            font-weight: 600; text-transform: uppercase; letter-spacing: 2px;
             transition: var(--transition);
         }
         .nav-links a:hover { color: var(--gold); }
 
-        .quote-btn {
-            background: var(--gold);
-            color: var(--midnight);
-            padding: 12px 28px;
-            font-family: 'Cinzel', serif;
-            font-weight: 700;
-            text-decoration: none;
-            font-size: 0.85rem;
-            letter-spacing: 1px;
-            transition: var(--transition);
+        /* --- DROPDOWN: Interior Design Reference --- */
+        .dropdown { position: relative; display: inline-block; }
+        .dropdown-content {
+            display: none; position: absolute; top: 100%; left: 0;
+            background: var(--midnight); min-width: 250px; 
+            border: 1px solid var(--gold); box-shadow: 0 10px 30px rgba(0,0,0,0.5);
         }
-        .quote-btn:hover { background: var(--white); transform: scale(1.05); }
+        .dropdown-content a { 
+            padding: 15px 20px; display: block; margin: 0;
+            border-bottom: 1px solid rgba(255,255,255,0.05); 
+        }
+        .dropdown:hover .dropdown-content { display: block; }
 
-        /* --- HERO: IMMERSIVE LUXURY --- */
+        .coming-soon { 
+            color: var(--gold); font-size: 0.7rem; border: 1px solid var(--gold); 
+            padding: 8px 12px; letter-spacing: 1px; font-weight: 600;
+        }
+
+        /* --- HERO --- */
         .hero {
-            height: 100vh;
-            background: linear-gradient(rgba(15, 23, 42, 0.7), rgba(15, 23, 42, 0.3)), 
-                        url('https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=2000');
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: var(--white);
+            height: 90vh; display: flex; align-items: center; justify-content: center;
+            background: linear-gradient(rgba(15, 23, 42, 0.7), rgba(15, 23, 42, 0.4)), 
+            url('https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=2000') center/cover;
+            color: var(--white); text-align: center;
+        }
+        .hero h1 { font-size: clamp(2.5rem, 8vw, 5rem); letter-spacing: 12px; margin-bottom: 10px; }
+        .hero p { color: var(--gold); letter-spacing: 6px; text-transform: uppercase; font-size: 1.2rem; }
+
+        /* --- PROCESS SECTION: 5-Step Process Reference --- */
+        .process-section { background: var(--midnight); color: var(--white); padding: 120px 6%; text-align: center; }
+        .process-header h2 { color: var(--gold); font-size: 3.5rem; margin-bottom: 20px; }
+        .process-header p { color: #cbd5e1; max-width: 800px; margin: 0 auto 80px; font-size: 1.1rem; }
+
+        .process-grid { 
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+            gap: 20px; position: relative; 
+        }
+        .process-grid::after {
+            content: ""; position: absolute; top: 40px; left: 10%; right: 10%;
+            height: 1px; background: rgba(197, 160, 89, 0.3); z-index: 1;
         }
 
-        .hero-content h1 {
-            font-family: 'Cinzel', serif;
-            font-size: clamp(2.5rem, 8vw, 6rem);
-            margin-bottom: 10px;
-            letter-spacing: 12px;
-            animation: fadeInDown 1.5s ease;
+        .process-item { position: relative; z-index: 2; }
+        .step-num { 
+            width: 80px; height: 80px; border: 2px solid var(--gold); background: var(--midnight);
+            margin: 0 auto 30px; display: flex; align-items: center; justify-content: center; 
+            color: var(--gold); font-size: 1.5rem; font-weight: bold;
         }
+        .process-item h4 { letter-spacing: 2px; font-size: 1rem; margin-bottom: 15px; color: var(--white); }
+        .process-item p { font-size: 0.85rem; color: #94a3b8; line-height: 1.6; padding: 0 10px; }
 
-        .hero-content p {
-            font-size: clamp(1rem, 3vw, 1.5rem);
-            letter-spacing: 6px;
-            text-transform: uppercase;
-            color: var(--gold);
-            font-weight: 300;
-        }
+        /* --- FOOTER: Headquarters --- */
+        footer { background: var(--midnight); color: var(--white); padding: 100px 6% 40px; text-align: center; border-top: 5px solid var(--gold); }
+        .footer-logo { color: var(--gold); font-size: 2.5rem; margin-bottom: 30px; letter-spacing: 4px; }
+        .address-box { margin-bottom: 50px; line-height: 2; font-size: 1.1rem; }
+        .address-box strong { color: var(--white); text-transform: uppercase; letter-spacing: 2px; display: block; margin-bottom: 10px; }
+        .footer-contact { font-family: 'Cinzel', serif; color: var(--gold); text-decoration: none; font-size: 1.5rem; transition: 0.3s; }
+        .footer-contact:hover { color: var(--white); }
 
-        /* --- INTERIOR SERVICES GRID --- */
-        .section { padding: 120px 8%; }
-        .section-header { text-align: center; margin-bottom: 80px; }
-        .section-header h2 { font-family: 'Cinzel', serif; font-size: 3rem; color: var(--midnight); text-transform: uppercase; }
-        .section-header hr { width: 80px; height: 4px; background: var(--gold); border: none; margin: 25px auto; }
-
-        .portfolio-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-            gap: 40px;
-        }
-
-        .unit-card {
-            background: var(--white);
-            position: relative;
-            overflow: hidden;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.06);
-            transition: var(--transition);
-        }
-
-        .unit-card:hover { transform: translateY(-15px); box-shadow: 0 30px 60px rgba(0,0,0,0.1); }
-        .unit-card img { width: 100%; height: 500px; object-fit: cover; transition: 1.5s; }
-        .unit-card:hover img { transform: scale(1.15); filter: brightness(0.6); }
-
-        .unit-info {
-            position: absolute;
-            bottom: 0; left: 0; width: 100%;
-            padding: 50px 40px;
-            background: linear-gradient(transparent, rgba(15, 23, 42, 0.95));
-            color: white;
-            opacity: 0;
-            transition: var(--transition);
-        }
-        .unit-card:hover .unit-info { opacity: 1; }
-        .unit-info h3 { font-family: 'Cinzel', serif; font-size: 2rem; margin-bottom: 10px; letter-spacing: 2px; }
-        .unit-info p { font-size: 0.9rem; color: var(--gold); text-transform: uppercase; letter-spacing: 2px; }
-
-        /* --- THE BOOT (CHAT CONCIERGE) --- */
-        #chat-widget {
-            position: fixed;
-            bottom: 40px; right: 40px;
-            z-index: 2000;
-        }
-
-        #chat-btn {
-            width: 80px; height: 80px;
-            background: var(--midnight);
-            color: var(--gold);
-            border-radius: 50%;
-            display: flex; align-items: center; justify-content: center;
-            cursor: pointer; font-size: 30px;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
-            border: 3px solid var(--gold);
-            transition: 0.3s;
-        }
-
-        #chat-window {
-            position: absolute;
-            bottom: 100px; right: 0;
-            width: 380px;
-            background: var(--white);
-            border-radius: 15px;
-            box-shadow: 0 30px 70px rgba(0,0,0,0.3);
-            display: none; flex-direction: column;
-            overflow: hidden;
-            border: 1px solid var(--gold);
-        }
-
-        .chat-head {
-            background: var(--midnight);
-            color: var(--white);
-            padding: 25px;
-            display: flex; justify-content: space-between; align-items: center;
-            border-bottom: 3px solid var(--gold);
-        }
-
-        .close-chat { cursor: pointer; font-size: 32px; color: var(--gold); line-height: 1; }
-
-        .chat-body { padding: 25px; height: 380px; overflow-y: auto; background: var(--off-white); }
-        .bot-msg { background: var(--white); padding: 18px; border-radius: 10px; margin-bottom: 20px; border-left: 5px solid var(--gold); font-size: 0.95rem; line-height: 1.6; }
-        
-        .chat-opt {
-            display: block; width: 100%; padding: 14px; margin-top: 12px;
-            background: transparent; border: 1px solid var(--midnight);
-            color: var(--midnight); cursor: pointer; border-radius: 6px;
-            font-weight: 600; font-size: 0.9rem; transition: 0.3s;
-            text-transform: uppercase; letter-spacing: 1px;
-        }
-        .chat-opt:hover { background: var(--midnight); color: var(--white); }
-
-        /* --- FOOTER: THE STUDIO ADDRESS --- */
-        footer {
-            background: var(--midnight);
-            color: var(--white);
-            padding: 120px 8%;
-            text-align: center;
-            border-top: 6px solid var(--gold);
-        }
-
-        .footer-logo { font-family: 'Cinzel', serif; font-size: 3rem; color: var(--gold); margin-bottom: 35px; letter-spacing: 5px; }
-        .address-box { margin: 45px 0; color: #cbd5e1; font-size: 1.1rem; line-height: 2.2; }
-        .address-box strong { color: var(--white); text-transform: uppercase; letter-spacing: 3px; border-bottom: 1px solid var(--gold); padding-bottom: 5px; }
-        
-        .footer-email {
-            font-family: 'Cinzel', serif;
-            color: var(--gold);
-            text-decoration: none;
-            font-size: clamp(1.5rem, 5vw, 2.5rem);
-            display: block;
-            margin: 30px 0;
-            transition: 0.4s;
-        }
-        .footer-email:hover { color: var(--white); letter-spacing: 5px; }
-
-        @keyframes fadeInDown {
-            from { opacity: 0; transform: translateY(-50px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        @media (max-width: 900px) {
-            .nav-links, .quote-btn { display: none; }
-            .portfolio-grid { grid-template-columns: 1fr; }
-            #chat-window { width: 320px; right: -15px; }
+        @media (max-width: 1024px) {
+            .process-grid::after { display: none; }
+            .process-grid { grid-template-columns: 1fr; gap: 50px; }
+            .nav-links { display: none; }
         }
     </style>
 </head>
 <body>
 
 <nav>
-    <div class="logo-box">
-        <img src="image_ef35bf.png" alt="LIVMORE LUXURY" class="logo-img">
+    <div class="logo">
+        <img src="image_ef35bf.png" alt="LIVMORE LUXURY">
     </div>
     <div class="nav-links">
         <a href="#home">Home</a>
-        <a href="#showcase">Portfolio</a>
-        <a href="#contact">Contact</a>
+        <a href="#about">About</a>
+        <div class="dropdown">
+            <a href="#interior">Interior Design ▾</a>
+            <div class="dropdown-content">
+                <a href="#">Kitchen Design</a>
+                <a href="#">Bedroom & Living</a>
+                <a href="#">Office Interiors</a>
+                <a href="#">Restaurant & Bar</a>
+                <a href="#">Hotel Interiors</a>
+                <a href="#">Turnkey Solutions</a>
+            </div>
+        </div>
+        <a href="#realestate">Real Estate</a>
+        <a href="#blogs">Blogs</a>
+        <span class="coming-soon">Construction: Launching Soon</span>
     </div>
-    <a href="mailto:livmoreluxury@gmail.com" class="quote-btn">GET FREE QUOTE</a>
 </nav>
 
 <section id="home" class="hero">
-    <div class="hero-content">
+    <div>
         <h1>LIVMORE LUXURY</h1>
-        <p>Architecting Your Lifestyle</p>
+        <p>Your Vision Our Design</p>
     </div>
 </section>
 
-<section id="showcase" class="section">
-    <div class="section-header">
-        <h2>Interior Excellence</h2>
-        <hr>
+<section class="process-section">
+    <div class="process-header">
+        <h2>Process</h2>
+        <p>Five steps from first conversation to final handover. No surprises. No hidden costs.</p>
     </div>
-
-    <div class="portfolio-grid">
-        <div class="unit-card">
-            <img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?q=80&w=1200" alt="Kitchen">
-            <div class="unit-info">
-                <h3>Bespoke Kitchens</h3>
-                <p>Modular Heritage & Gola Systems</p>
-            </div>
+    <div class="process-grid">
+        <div class="process-item">
+            <div class="step-num">01</div>
+            <h4>FREE CONSULTATION</h4>
+            <p>Understand your vision. No charge. No obligation.</p>
         </div>
-
-        <div class="unit-card">
-            <img src="https://images.unsplash.com/photo-1534349762230-e0cadf78f5db?q=80&w=1200" alt="Ceiling">
-            <div class="unit-info">
-                <h3>CRCK TU Profiles</h3>
-                <p>Luxe Ceiling & LED Integration</p>
-            </div>
+        <div class="process-item">
+            <div class="step-num">02</div>
+            <h4>DETAILED PROPOSAL</h4>
+            <p>Full itemized quote, specs and timeline in writing.</p>
         </div>
-
-        <div class="unit-card">
-            <img src="https://images.unsplash.com/photo-1601053073708-bb6b0d95d852?q=80&w=1200" alt="Pooja">
-            <div class="unit-info">
-                <h3>Sacred Puja Units</h3>
-                <p>Traditional Soul, Modern Craft</p>
-            </div>
+        <div class="process-item">
+            <div class="step-num">03</div>
+            <h4>DESIGN & PLANNING</h4>
+            <p>3D renders and plans — approved by you first.</p>
         </div>
-
-        <div class="unit-card">
-            <img src="https://images.unsplash.com/photo-1616594039964-ae9021a400a0?q=80&w=1200" alt="Bedroom">
-            <div class="unit-info">
-                <h3>Master Sanctuaries</h3>
-                <p>Wardrobes, Paneling & PU Finishes</p>
-            </div>
+        <div class="process-item">
+            <div class="step-num">04</div>
+            <h4>EXECUTION</h4>
+            <p>Expert team, premium materials, weekly updates.</p>
+        </div>
+        <div class="process-item">
+            <div class="step-num">05</div>
+            <h4>HANDOVER</h4>
+            <p>Snag-free delivery with full documentation.</p>
         </div>
     </div>
 </section>
 
-<div id="chat-widget">
-    <div id="chat-btn" onclick="toggleChat()">💬</div>
-    
-    <div id="chat-window">
-        <div class="chat-head">
-            <strong>LIVMORE CONCIERGE</strong>
-            <span class="close-chat" onclick="toggleChat()">×</span>
-        </div>
-        <div class="chat-body" id="chat-res">
-            <div class="bot-msg">Welcome to the inner circle of luxury. I can guide you through our Kitchen, Wardrobe, and Profile Lighting expertise. What is your priority?</div>
-            <button class="chat-opt" onclick="askBot('kitchen')">Modular Kitchen Concepts</button>
-            <button class="chat-opt" onclick="askBot('lighting')">Profile Lighting & Ceiling</button>
-            <button class="chat-opt" onclick="askBot('visit')">Book a Studio Visit</button>
-        </div>
-    </div>
-</div>
-
-<footer id="contact">
-    <div class="footer-logo">LIVMORE LUXURY</div>
+<footer>
+    <h2 class="footer-logo">LIVMORE LUXURY</h2>
     <div class="address-box">
-        <p><strong>OUR DESIGN STUDIO:</strong></p>
+        <strong>Headquarters & Experience Centre</strong>
         <p>Plot No.1282/A, Road No 64, Jubilee Hills,</p>
         <p>Hyderabad, Telangana - 500033</p>
-        <p>📞 +91 7659855099</p>
     </div>
-    <a href="mailto:livmoreluxury@gmail.com" class="footer-email">livmoreluxury@gmail.com</a>
-    <p style="font-size: 0.8rem; color: #64748b; margin-top: 60px; letter-spacing: 1px;">© 2026 LIVMORE LUXURY INTERIORS. DESIGNED FOR THE ELITE.</p>
+    <div style="margin-bottom: 40px;">
+        <p style="color: #94a3b8; margin-bottom: 10px;">Connect with our experts:</p>
+        <a href="mailto:livmoreluxury@gmail.com" class="footer-contact">livmoreluxury@gmail.com</a>
+        <p style="margin-top: 10px;">📞 +91 7659855099</p>
+    </div>
+    <p style="font-size: 0.75rem; color: #475569; letter-spacing: 1px;">© 2026 LIVMORE LUXURY INTERIORS. ALL RIGHTS RESERVED.</p>
 </footer>
-
-<script>
-    function toggleChat() {
-        const win = document.getElementById('chat-window');
-        // Perfect toggle logic
-        win.style.display = (win.style.display === 'flex') ? 'none' : 'flex';
-    }
-
-    function askBot(topic) {
-        const area = document.getElementById('chat-res');
-        let reply = "";
-        
-        if(topic === 'kitchen') reply = "We specialize in Gola, Ledge, and Heritage Kitchen layouts featuring premium high-pressure laminates.";
-        if(topic === 'lighting') reply = "Our CRCK TU Profile systems create a shadowless, museum-grade glow for your ceilings.";
-        if(topic === 'visit') reply = "We would be honored. Please send your site plan to <b>livmoreluxury@gmail.com</b> to schedule a session.";
-
-        const div = document.createElement('div');
-        div.className = 'bot-msg';
-        div.innerHTML = reply;
-        area.appendChild(div);
-        area.scrollTop = area.scrollHeight;
-    }
-</script>
 
 </body>
 </html>
