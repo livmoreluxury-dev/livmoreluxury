@@ -12,330 +12,217 @@
             --midnight: #06090F; 
             --gold: #D4AF37;     
             --white: #ffffff;
-            --smoke: #F9F9F9;
+            --smoke: #F4F4F4;
             --transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Montserrat', sans-serif; background: var(--smoke); color: var(--midnight); overflow-x: hidden; scroll-behavior: smooth; }
+        body { font-family: 'Montserrat', sans-serif; background: var(--smoke); color: var(--midnight); overflow-x: hidden; }
         h1, h2, h3, h4 { font-family: 'Cinzel', serif; letter-spacing: 2px; }
-
-        #dot { width: 8px; height: 8px; background: var(--gold); position: fixed; border-radius: 50%; pointer-events: none; z-index: 10000; mix-blend-mode: difference; }
 
         /* --- NAVIGATION --- */
         nav {
-            position: fixed; top: 0; width: 100%; padding: 25px 8%;
+            position: fixed; top: 0; width: 100%; padding: 15px 8%;
             display: flex; justify-content: space-between; align-items: center;
             z-index: 1000; background: rgba(6, 9, 15, 0.98); border-bottom: 1px solid rgba(212, 175, 55, 0.2);
             backdrop-filter: blur(15px);
         }
-        .logo-text { font-family: 'Cinzel'; color: var(--white); font-size: 1.4rem; letter-spacing: 4px; font-weight: 700; }
+        .brand { display: flex; flex-direction: column; }
+        .logo-text { font-family: 'Cinzel'; color: var(--white); font-size: 1.2rem; letter-spacing: 3px; font-weight: 700; }
         .logo-text span { color: var(--gold); }
+        .tagline-nav { color: var(--gold); font-size: 0.55rem; letter-spacing: 2px; text-transform: uppercase; margin-top: 2px; }
         
-        .nav-links { display: flex; gap: 40px; align-items: center; }
-        .nav-links a { text-decoration: none; color: var(--white); font-size: 0.7rem; font-weight: 500; text-transform: uppercase; letter-spacing: 2px; cursor: pointer; transition: 0.3s; }
+        .nav-links { display: flex; gap: 30px; align-items: center; }
+        .nav-links a { text-decoration: none; color: var(--white); font-size: 0.65rem; font-weight: 500; text-transform: uppercase; letter-spacing: 2px; cursor: pointer; transition: 0.3s; }
         .nav-links a:hover { color: var(--gold); }
 
         .dropdown { position: relative; }
         .dropdown-menu {
             display: none; position: absolute; top: 100%; left: -20px;
-            background: var(--midnight); min-width: 260px; border: 1px solid var(--gold); padding: 10px 0;
+            background: var(--midnight); min-width: 220px; border: 1px solid var(--gold); padding: 10px 0;
             box-shadow: 0 15px 40px rgba(0,0,0,0.6); margin-top: 15px;
         }
-        .dropdown-menu a { display: block; padding: 12px 25px; font-size: 0.65rem; border-bottom: 1px solid rgba(255,255,255,0.05); }
+        .dropdown-menu a { display: block; padding: 10px 20px; font-size: 0.6rem; border-bottom: 1px solid rgba(255,255,255,0.05); }
         .dropdown:hover .dropdown-menu { display: block; }
 
         /* --- HERO --- */
         .hero {
-            height: 100vh; background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&q=80&w=2000') center/cover;
+            height: 80vh; background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&q=80&w=2000') center/cover;
             display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; color: white;
         }
-        .hero h1 { font-size: clamp(3rem, 10vw, 6rem); letter-spacing: 15px; margin-bottom: 10px; text-transform: uppercase; }
-        .hero p { color: var(--gold); letter-spacing: 8px; text-transform: uppercase; font-size: 1.1rem; font-weight: 300; }
+        .hero h1 { font-size: clamp(2.5rem, 8vw, 5rem); letter-spacing: 12px; margin-bottom: 10px; }
+        .hero p { color: var(--gold); letter-spacing: 6px; text-transform: uppercase; font-size: 1rem; }
 
-        /* --- THE S-CURVE ROADMAP (~ ~ ~ ~) --- */
-        .snake-section { padding: 120px 0; background: white; overflow: hidden; }
-        .s-curve-container { position: relative; max-width: 1000px; margin: 0 auto; }
+        /* --- HORIZONTAL S-CURVE PATH --- */
+        .strategic-section { padding: 100px 5%; background: white; text-align: center; overflow: hidden; }
+        .s-path-container { position: relative; width: 100%; max-width: 1200px; margin: 60px auto; padding: 40px 0; }
         
-        .s-step { display: flex; align-items: center; margin-bottom: -2px; }
-        .s-content { width: 50%; padding: 60px; position: relative; z-index: 5; }
-        .s-visual { width: 50%; height: 250px; position: relative; }
+        /* The Wave S-Line SVG */
+        .wave-svg { width: 100%; height: 120px; fill: none; stroke: var(--gold); stroke-width: 2; stroke-dasharray: 8; margin-bottom: 20px; }
 
-        /* The actual S-Line */
-        .s-line {
-            position: absolute; width: 100%; height: 100%;
-            border: 3px solid var(--gold);
+        .steps-wrapper { display: flex; justify-content: space-between; position: relative; z-index: 5; margin-top: -80px; }
+        .step-item { width: 18%; text-align: center; padding: 10px; }
+        .step-circle { 
+            width: 40px; height: 40px; background: var(--midnight); border: 2px solid var(--gold); 
+            border-radius: 50%; color: var(--gold); display: flex; align-items: center; 
+            justify-content: center; margin: 0 auto 20px; font-family: 'Cinzel'; font-weight: bold;
         }
+        .step-item h4 { font-size: 0.8rem; color: var(--midnight); margin-bottom: 8px; text-transform: uppercase; }
+        .step-item p { font-size: 0.7rem; color: #777; line-height: 1.6; }
 
-        /* Alternating Curves */
-        .s-step:nth-child(odd) { flex-direction: row; }
-        .s-step:nth-child(even) { flex-direction: row-reverse; }
-
-        .s-step:nth-child(odd) .s-visual .s-line {
-            border-left: none; border-bottom: none;
-            border-radius: 0 150px 0 0;
-            top: 50%; left: -50%;
-        }
-        .s-step:nth-child(even) .s-visual .s-line {
-            border-right: none; border-bottom: none;
-            border-radius: 150px 0 0 0;
-            top: 50%; right: -50%;
-        }
-        .s-step:first-child .s-visual .s-line { border-top: none; }
-
-        .step-circle {
-            width: 50px; height: 50px; background: var(--midnight); border: 2px solid var(--gold);
-            border-radius: 50%; color: var(--gold); display: flex; align-items: center;
-            justify-content: center; font-family: 'Cinzel'; font-weight: bold;
-            position: absolute; top: 40%; z-index: 10;
-        }
-        .s-step:nth-child(odd) .step-circle { left: -25px; }
-        .s-step:nth-child(even) .step-circle { right: -25px; }
-
-        .s-content h4 { color: var(--midnight); font-size: 1.4rem; margin-bottom: 10px; }
-        .s-content p { font-size: 0.9rem; color: #666; line-height: 1.8; }
-
-        /* --- PORTFOLIO GALLERY (Corrected Images) --- */
-        .gallery-wrap { background: var(--midnight); padding: 120px 8%; color: white; }
-        .portfolio-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(380px, 1fr)); gap: 30px; margin-top: 60px; }
+        /* --- SIGNATURE PIECES AUTO-SCROLL --- */
+        .signature-section { background: var(--midnight); padding: 100px 0; overflow: hidden; }
+        .signature-section h2 { color: var(--gold); text-align: center; margin-bottom: 60px; font-size: 2rem; }
         
-        .work-box { height: 550px; position: relative; overflow: hidden; border: 1px solid rgba(212, 175, 55, 0.1); }
-        .work-box img { width: 100%; height: 100%; object-fit: cover; transition: 1.5s; }
-        .work-box:hover img { transform: scale(1.1); filter: brightness(0.4); }
-        
-        .work-info { position: absolute; bottom: 40px; left: 40px; opacity: 0; transition: 0.5s; }
-        .work-box:hover .work-info { opacity: 1; }
-        .work-info h3 { color: var(--gold); font-size: 1.5rem; margin-bottom: 5px; }
-        .work-info p { font-size: 0.75rem; letter-spacing: 3px; text-transform: uppercase; }
+        .slider-track { display: flex; width: calc(250px * 14); animation: scroll 40s linear infinite; gap: 20px; }
+        .slider-track:hover { animation-play-state: paused; }
 
-        /* --- VISION & PILLARS (Last Tile Above Footer) --- */
-        .pillars-section { background: var(--white); padding: 120px 10%; border-top: 1px solid #eee; }
-        .pillars-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; }
-        .pillar { padding: 40px; background: var(--smoke); border-bottom: 3px solid var(--gold); transition: 0.4s; }
-        .pillar:hover { transform: translateY(-10px); background: white; box-shadow: 0 20px 40px rgba(0,0,0,0.05); }
-        .pillar h2 { font-size: 1.4rem; color: var(--gold); margin-bottom: 20px; }
-        .pillar p { font-size: 0.9rem; line-height: 1.8; color: #555; }
+        .slide { width: 280px; height: 400px; flex-shrink: 0; position: relative; overflow: hidden; border: 1px solid rgba(212,175,55,0.2); }
+        .slide img { width: 100%; height: 100%; object-fit: cover; transition: 1s; }
+        .slide:hover img { transform: scale(1.1); filter: brightness(0.5); }
+        .slide-info { position: absolute; bottom: 20px; left: 20px; opacity: 0; transition: 0.4s; }
+        .slide:hover .slide-info { opacity: 1; }
+        .slide-info h3 { color: var(--gold); font-size: 1rem; }
+        .slide-info p { color: white; font-size: 0.6rem; letter-spacing: 1px; text-transform: uppercase; }
+
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(calc(-280px * 7)); }
+        }
+
+        /* --- VISION & MISSION PILLARS --- */
+        .pillars-section { background: white; padding: 100px 10%; }
+        .pillars-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+        .pillar { padding: 40px; background: var(--smoke); border-top: 4px solid var(--gold); }
+        .pillar h2 { font-size: 1.2rem; color: var(--gold); margin-bottom: 15px; }
+        .pillar p { font-size: 0.8rem; line-height: 1.8; color: #555; }
 
         /* --- SPA PAGES --- */
-        .spa-page { display: none; min-height: 100vh; background: var(--midnight); color: white; padding: 160px 10% 100px; }
-        .back-cta { background: none; border: 1px solid var(--gold); color: var(--gold); padding: 12px 30px; cursor: pointer; letter-spacing: 3px; font-size: 0.65rem; text-transform: uppercase; margin-bottom: 60px; transition: 0.4s; }
-        .back-cta:hover { background: var(--gold); color: var(--midnight); }
+        .spa-page { display: none; min-height: 100vh; background: var(--midnight); color: white; padding: 140px 10% 80px; }
+        .back-btn { background: none; border: 1px solid var(--gold); color: var(--gold); padding: 10px 25px; cursor: pointer; letter-spacing: 2px; font-size: 0.6rem; text-transform: uppercase; margin-bottom: 40px; }
         
-        .spa-grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 80px; align-items: center; }
-        .spa-img { width: 100%; height: 70vh; object-fit: cover; border: 1px solid rgba(212, 175, 55, 0.2); }
-        .spa-text h2 { font-size: 4rem; color: var(--gold); margin-bottom: 25px; }
+        .spa-content { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+        .spa-img { width: 100%; height: 60vh; object-fit: cover; border: 1px solid var(--gold); }
+        .spa-text h2 { font-size: 3rem; color: var(--gold); margin-bottom: 20px; }
 
         /* --- FOOTER --- */
-        footer { background: #030508; color: white; padding: 100px 10%; border-top: 1px solid #111; }
-        .f-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 80px; }
-        .f-box h2 { color: var(--gold); margin-bottom: 20px; letter-spacing: 4px; }
-        .f-box b { color: var(--gold); display: block; margin-bottom: 10px; font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; }
-        .f-box p { color: #888; font-size: 0.85rem; line-height: 2.2; }
-
-        .reveal { opacity: 0; transform: translateY(40px); transition: 1s cubic-bezier(0.16, 1, 0.3, 1); }
-        .reveal.active { opacity: 1; transform: translateY(0); }
+        footer { background: #030508; color: white; padding: 80px 10%; border-top: 1px solid #111; }
+        .f-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 60px; }
+        .f-box h2 { color: var(--gold); margin-bottom: 15px; font-size: 1.4rem; }
+        .f-box p { color: #777; font-size: 0.8rem; line-height: 2; }
     </style>
 </head>
 <body>
 
-<div id="dot"></div>
-
 <nav>
-    <div class="logo-text">LIVMORE <span>LUXURY</span></div>
+    <div class="brand">
+        <div class="logo-text">LIVMORE <span>LUXURY</span></div>
+        <div class="tagline-nav">Your Vision and our design</div>
+    </div>
     <div class="nav-links">
-        <a onclick="navigate('home')">Studio</a>
+        <a onclick="navigate('home')">Home</a>
         <div class="dropdown">
             <a onclick="filterPort('all')">Signature Pieces ▾</a>
             <div class="dropdown-menu">
                 <a onclick="filterPort('Kitchen')">Gola Kitchens</a>
                 <a onclick="filterPort('Puja')">Tall Puja Units</a>
-                <a onclick="filterPort('Laminated')">Laminated Wardrobes</a>
-                <a onclick="filterPort('Sliding')">Sliding Glass</a>
-                <a onclick="filterPort('PU')">PU Series</a>
-                <a onclick="filterPort('Living')">TV Units</a>
+                <a onclick="filterPort('Wardrobe')">Bespoke Wardrobes</a>
             </div>
         </div>
         <a onclick="navigate('real-estate')">Real Estate</a>
         <a onclick="navigate('construction')">Construction</a>
+        <a onclick="navigate('home')">About</a>
     </div>
 </nav>
 
-<div id="master-site">
+<div id="main-site">
     <section id="home" class="hero">
-        <div class="reveal">
-            <h1>LIVMORE LUXURY</h1>
-            <p>Your Vision and our design</p>
+        <h1>LIVMORE LUXURY</h1>
+        <p>Your Vision and our design</p>
+    </section>
+
+    <section class="strategic-section">
+        <h2 class="section-title">The Strategic Path</h2>
+        <div class="s-path-container">
+            <svg class="wave-svg" viewBox="0 0 1200 120">
+                <path d="M0,60 C150,150 300,-30 450,60 C600,150 750,-30 900,60 C1050,150 1200,60 1200,60" />
+            </svg>
+            <div class="steps-wrapper">
+                <div class="step-item"><div class="step-circle">01</div><h4>Analysis</h4><p>Mapping your lifestyle patterns.</p></div>
+                <div class="step-item" style="margin-top: 40px;"><div class="step-circle">02</div><h4>Technical</h4><p>Itemized architectural drawings.</p></div>
+                <div class="step-item"><div class="step-circle">03</div><h4>Synthesis</h4><p>Photorealistic 3D VR sessions.</p></div>
+                <div class="step-item" style="margin-top: 40px;"><div class="step-circle">04</div><h4>Craft</h4><p>Precision factory integration.</p></div>
+                <div class="step-item"><div class="step-circle">05</div><h4>Legacy</h4><p>A flawless final handover.</p></div>
+            </div>
         </div>
     </section>
 
-    <section class="snake-section">
-        <h2 style="text-align:center; margin-bottom: 80px;" class="section-title">The Strategic Path</h2>
-        <div class="s-curve-container">
-            
-            <div class="s-step">
-                <div class="s-content">
-                    <h4>Spatial Analysis</h4>
-                    <p>We dissect your daily rituals to map out an architectural flow that serves your lifestyle.</p>
-                </div>
-                <div class="s-visual"><div class="s-line"></div><div class="step-circle">01</div></div>
-            </div>
-
-            <div class="s-step">
-                <div class="s-content">
-                    <h4>Technical Transparency</h4>
-                    <p>Itemized technical blueprints ensuring every bolt and board is accounted for before we start.</p>
-                </div>
-                <div class="s-visual"><div class="s-line"></div><div class="step-circle">02</div></div>
-            </div>
-
-            <div class="s-step">
-                <div class="s-content">
-                    <h4>Material Synthesis</h4>
-                    <p>Experience your home through 3D photorealistic virtual reality sessions.</p>
-                </div>
-                <div class="s-visual"><div class="s-line"></div><div class="step-circle">03</div></div>
-            </div>
-
-            <div class="s-step">
-                <div class="s-content">
-                    <h4>Master Craft</h4>
-                    <p>Our veteran site architects manage the structural integration of factory-precision units.</p>
-                </div>
-                <div class="s-visual"><div class="s-line"></div><div class="step-circle">04</div></div>
-            </div>
-
+    <section id="gallery" class="signature-section">
+        <h2>Signature Pieces</h2>
+        <div class="slider-track">
+            <div class="slide"><img src="image_ede3a0.png"><div class="slide-info"><h3>Gola Kitchen</h3><p>Linear Minimalist</p></div></div>
+            <div class="slide"><img src="image_ee3a17.png"><div class="slide-info"><h3>Puja Unit</h3><p>Sacred CNC Design</p></div></div>
+            <div class="slide"><img src="https://images.unsplash.com/photo-1595428774223-ef52624120d2?auto=format&fit=crop&q=80&w=600"><div class="slide-info"><h3>Wardrobe</h3><p>Openable Laminated</p></div></div>
+            <div class="slide"><img src="https://images.unsplash.com/photo-1616486341351-702524d73ccc?auto=format&fit=crop&q=80&w=600"><div class="slide-info"><h3>Sliding Glass</h3><p>Slim Profile</p></div></div>
+            <div class="slide"><img src="https://images.unsplash.com/photo-1556912177-c54030639a4c?auto=format&fit=crop&q=80&w=600"><div class="slide-info"><h3>TV Unit</h3><p>Wall Paneling</p></div></div>
+            <div class="slide"><img src="https://images.unsplash.com/photo-1615529182904-14819c35db37?auto=format&fit=crop&q=80&w=600"><div class="slide-info"><h3>Ceiling</h3><p>Veneer Design</p></div></div>
+            <div class="slide"><img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&q=80&w=600"><div class="slide-info"><h3>Living Space</h3><p>Architectural Flow</p></div></div>
+            <div class="slide"><img src="image_ede3a0.png"></div>
+            <div class="slide"><img src="image_ee3a17.png"></div>
+            <div class="slide"><img src="https://images.unsplash.com/photo-1595428774223-ef52624120d2?q=80&w=600"></div>
+            <div class="slide"><img src="https://images.unsplash.com/photo-1616486341351-702524d73ccc?q=80&w=600"></div>
+            <div class="slide"><img src="https://images.unsplash.com/photo-1556912177-c54030639a4c?q=80&w=600"></div>
+            <div class="slide"><img src="https://images.unsplash.com/photo-1615529182904-14819c35db37?q=80&w=600"></div>
+            <div class="slide"><img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?q=80&w=600"></div>
         </div>
     </section>
 
-    <div id="gallery" class="gallery-wrap reveal">
-        <h2 style="text-align: center; color: var(--gold); margin-bottom: 60px;">Signature Portfolio</h2>
-        <div class="portfolio-grid">
-            
-            <div class="work-box" data-cat="Kitchen">
-                <img src="image_ede3a0.png">
-                <div class="work-info"><h3>Gola Kitchen</h3><p>Handle-less Sophistication</p></div>
-            </div>
-
-            <div class="work-box" data-cat="Puja">
-                <img src="image_ee3a17.png">
-                <div class="work-info"><h3>Tall Puja Unit</h3><p>Profile Door Sacred Space</p></div>
-            </div>
-
-            <div class="work-box" data-cat="Laminated">
-                <img src="image_ee423a.png">
-                <div class="work-info"><h3>Laminated Wardrobe</h3><p>Openable Luxury Series</p></div>
-            </div>
-
-            <div class="work-box" data-cat="Sliding">
-                <img src="image_ef29d8.png">
-                <div class="work-info"><h3>Sliding Glass Wardrobe</h3><p>Slim Profile Italian Style</p></div>
-            </div>
-
-            <div class="work-box" data-cat="PU">
-                <img src="image_ef2a1f.png">
-                <div class="work-info"><h3>PU Wardrobe</h3><p>High-Gloss Seamless Finish</p></div>
-            </div>
-
-            <div class="work-box" data-cat="Living">
-                <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=1000">
-                <div class="work-info"><h3>Wall Paneling</h3><p>Living TV Unit & Textures</p></div>
-            </div>
-
-            <div class="work-box" data-cat="Living">
-                <img src="https://images.unsplash.com/photo-1615529182904-14819c35db37?auto=format&fit=crop&q=80&w=1000">
-                <div class="work-info"><h3>Veneer Ceiling</h3><p>Living Architectural Woodwork</p></div>
-            </div>
-
-        </div>
-    </div>
-
-    <section class="pillars-section reveal">
+    <section class="pillars-section">
         <div class="pillars-grid">
-            <div class="pillar">
-                <h2>Vision</h2>
-                <p>To redefine luxury living through architectural precision and ancestral craftsmanship. We curate homes that act as a celebrated extension of your personal prestige.</p>
-            </div>
-            <div class="pillar">
-                <h2>Mission</h2>
-                <p>100% transparency through itemized technical blueprints. We utilize photorealistic synthesis to eliminate the uncertainty of high-end home renovation.</p>
-            </div>
-            <div class="pillar">
-                <h2>Why Select Us</h2>
-                <p>With 40 years of collective intelligence, we master the balance of form and function. Every sanctuary we build is a structural legacy.</p>
-            </div>
+            <div class="pillar"><h2>Vision</h2><p>To redefine luxury living through architectural precision and ancestral craftsmanship.</p></div>
+            <div class="pillar"><h2>Mission</h2><p>Ensuring 100% transparency through itemized technical blueprints and site honesty.</p></div>
+            <div class="pillar"><h2>Why Us</h2><p>With 40 years of collective intelligence, we master the balance of form and function.</p></div>
         </div>
     </section>
 </div>
 
 <div id="real-estate-view" class="spa-page">
-    <button class="back-cta" onclick="navigate('home')">← Go Back to Studio</button>
-    <div class="spa-grid">
-        <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=1000" class="spa-img">
-        <div class="spa-text">
-            <h2>Real Estate</h2>
-            <p>Our aim is to bring architectural clarity to high-end land acquisition. We provide technical site audits and investment intelligence to ensure your future residence starts with structural integrity.</p>
-        </div>
+    <button class="back-btn" onclick="navigate('home')">← Back to Studio</button>
+    <div class="spa-content">
+        <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=1000" class="spa-img">
+        <div class="spa-text"><h2>Real Estate</h2><p>Technical site audits and investment intelligence for land acquisition.</p></div>
     </div>
 </div>
 
 <div id="construction-view" class="spa-page">
-    <button class="back-cta" onclick="navigate('home')">← Go Back to Studio</button>
-    <div class="spa-grid">
-        <img src="https://images.unsplash.com/photo-1503387762-592dea58ef23?auto=format&fit=crop&q=80&w=1000" class="spa-img">
-        <div class="spa-text">
-            <h2>Construction</h2>
-            <p>Construction at Livmore is a structural religion. Our aim is to build high-standard structural legacies using advanced seismic-resistant technology.</p>
-        </div>
+    <button class="back-btn" onclick="navigate('home')">← Back to Studio</button>
+    <div class="spa-content">
+        <img src="https://images.unsplash.com/photo-1503387762-592dea58ef23?q=80&w=1000" class="spa-img">
+        <div class="spa-text"><h2>Construction</h2><p>Building high-standard structural legacies with seismic-resistant tech.</p></div>
     </div>
 </div>
 
 <footer>
     <div class="f-grid">
-        <div class="f-box">
-            <h2>LIVMORE <span>LUXURY</span></h2>
-            <p>Your Vision and our design. Bridging structural honesty with elite aesthetics.</p>
-        </div>
-        <div class="f-box">
-            <b>Experience Centre</b>
-            <p>Plot No.1282/A, Road No 64,<br>Jubilee Hills, Hyderabad,<br>Telangana - 500033</p>
-        </div>
-        <div class="f-box">
-            <b>Contact Concierge</b>
-            <p>+91 7659855099<br>livmoreluxury@gmail.com</p>
-        </div>
+        <div class="f-box"><h2>LIVMORE LUXURY</h2><p>Your Vision and our design. Jubilee Hills, Hyderabad.</p></div>
+        <div class="f-box"><b>Address</b><p>Road No 64, Jubilee Hills, Hyderabad, 500033</p></div>
+        <div class="f-box"><b>Contact</b><p>+91 7659855099<br>livmoreluxury@gmail.com</p></div>
     </div>
 </footer>
 
 <script>
-    const dot = document.getElementById('dot');
-    document.addEventListener('mousemove', e => { dot.style.left = e.clientX+'px'; dot.style.top = e.clientY+'px'; });
-
-    const observer = new IntersectionObserver(entries => {
-        entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('active'); });
-    }, { threshold: 0.1 });
-    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
-    function navigate(target) {
-        document.getElementById('master-site').style.display = 'none';
+    function navigate(id) {
+        document.getElementById('main-site').style.display = 'none';
         document.getElementById('real-estate-view').style.display = 'none';
         document.getElementById('construction-view').style.display = 'none';
-
-        if(target === 'home') {
-            document.getElementById('master-site').style.display = 'block';
-        } else {
-            document.getElementById(target + '-view').style.display = 'block';
-        }
-        window.scrollTo(0,0);
+        if(id === 'home') document.getElementById('main-site').style.display = 'block';
+        else document.getElementById(id + '-view').style.display = 'block';
+        window.scrollTo(0, 0);
     }
 
     function filterPort(cat) {
         navigate('home');
-        setTimeout(() => {
-            document.getElementById('gallery').scrollIntoView();
-            document.querySelectorAll('.work-box').forEach(i => {
-                i.style.display = (cat === 'all' || i.dataset.cat === cat) ? 'block' : 'none';
-            });
-        }, 50);
+        setTimeout(() => document.getElementById('gallery').scrollIntoView(), 50);
     }
 </script>
 
