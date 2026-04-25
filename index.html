@@ -3,297 +3,310 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LIVEMORE | Your Vision Our Design</title>
+    <title>LIVEMORE | Bespoke Luxury Interiors</title>
     
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:wght@200;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,600;1,300&family=Montserrat:wght@100;300;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
     <style>
         :root {
-            --sky-blue: #f0f8ff; /* Soft sky blue background */
-            --accent-blue: #0077b6; /* Deep professional blue */
-            --gold: #d4af37; /* Metallic Gold */
-            --dark: #1a1a1a;
-            --white: #ffffff;
-            --shadow: 0 10px 30px rgba(0,0,0,0.1);
+            --sky-blue: #5B84B1; /* Sophisticated Steel Blue */
+            --gold: #D4AF37; /* Burnished Gold */
+            --dark: #0F1113;
+            --white: #FDFDFD;
+            --transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
 
         body {
             font-family: 'Montserrat', sans-serif;
-            background-color: var(--sky-blue);
+            background-color: var(--white);
             color: var(--dark);
-            line-height: 1.6;
+            overflow-x: hidden;
         }
 
-        h1, h2, h3, .logo { font-family: 'Cinzel', serif; }
-
-        /* --- NAVIGATION --- */
+        /* --- NAVIGATION: THE GLASS BAR --- */
         nav {
             position: fixed;
-            width: 100%;
-            padding: 20px 5%;
+            top: 0; width: 100%;
+            padding: 30px 6%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
             z-index: 1000;
-            border-bottom: 2px solid var(--gold);
+            background: rgba(255, 255, 255, 0.01);
+            backdrop-filter: blur(10px);
+            transition: var(--transition);
         }
 
-        .logo-area { display: flex; flex-direction: column; }
-        .logo { font-size: 24px; color: var(--accent-blue); letter-spacing: 3px; font-weight: 700; }
-        .tagline { font-size: 10px; text-transform: uppercase; letter-spacing: 2px; color: var(--gold); }
+        .logo-box { display: flex; flex-direction: column; }
+        .logo { 
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.2rem;
+            font-weight: 600;
+            letter-spacing: 5px;
+            color: var(--dark);
+            text-transform: uppercase;
+        }
+        .tagline { 
+            font-size: 0.65rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-top: -5px;
+        }
 
         .nav-links a {
             text-decoration: none;
             color: var(--dark);
-            margin-left: 30px;
-            font-size: 13px;
-            font-weight: 600;
+            margin-left: 40px;
+            font-size: 0.75rem;
+            letter-spacing: 2px;
             text-transform: uppercase;
             transition: 0.3s;
         }
+        .nav-links a:hover { color: var(--sky-blue); }
 
-        .nav-links a:hover { color: var(--accent-blue); }
-
-        /* --- HERO --- */
+        /* --- HERO: CINEMATIC ENTRANCE --- */
         .hero {
             height: 100vh;
-            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&q=80&w=1920');
-            background-size: cover;
-            background-position: center;
             display: flex;
             align-items: center;
             justify-content: center;
+            background: linear-gradient(rgba(15,17,19,0.4), rgba(15,17,19,0.4)), 
+                        url('https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&q=80&w=2000');
+            background-size: cover;
+            background-position: center;
             text-align: center;
             color: white;
         }
 
-        .hero h1 { font-size: clamp(40px, 8vw, 80px); margin-bottom: 10px; }
-        .hero p { font-size: 18px; letter-spacing: 5px; text-transform: uppercase; color: var(--gold); }
+        .hero h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(3rem, 12vw, 8rem);
+            font-weight: 300;
+            line-height: 0.9;
+            animation: fadeIn 2s ease;
+        }
 
-        /* --- GRID LAYOUT --- */
-        .section { padding: 80px 5%; max-width: 1400px; margin: 0 auto; }
-        .section-header { text-align: center; margin-bottom: 50px; }
-        .section-header h2 { font-size: 36px; color: var(--accent-blue); }
-        .section-header hr { width: 60px; height: 3px; background: var(--gold); border: none; margin: 15px auto; }
-
-        .unit-grid {
+        /* --- THE CURATED GRID --- */
+        .showcase { padding: 150px 6%; }
+        .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 40px;
         }
 
-        .card {
-            background: white;
-            border-radius: 5px;
-            overflow: hidden;
-            box-shadow: var(--shadow);
-            transition: 0.4s;
-            border-bottom: 3px solid transparent;
-        }
+        .unit { position: relative; overflow: hidden; opacity: 0; transform: translateY(50px); transition: var(--transition); }
+        .unit.active { opacity: 1; transform: translateY(0); }
 
-        .card:hover { transform: translateY(-10px); border-bottom: 3px solid var(--gold); }
+        .unit img { width: 100%; height: 100%; object-content: cover; transition: 1.5s; }
+        .unit:hover img { transform: scale(1.1); }
 
-        .card img { width: 100%; height: 250px; object-fit: cover; }
-        .card-body { padding: 25px; }
-        .card-body h3 { font-size: 18px; margin-bottom: 10px; color: var(--accent-blue); }
-        .card-body p { font-size: 14px; color: #666; }
-
-        /* --- CHATBOT UI --- */
-        #chat-btn {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background: var(--accent-blue);
+        .unit-info {
+            position: absolute;
+            bottom: 30px; left: 30px;
             color: white;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-            z-index: 2000;
-            font-size: 24px;
-            transition: 0.3s;
+            z-index: 2;
         }
+        .unit-info h3 { font-family: 'Cormorant Garamond', serif; font-size: 2rem; }
+        .unit-info p { font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); }
 
-        #chat-window {
+        /* Custom Sizing for Editorial Feel */
+        .large { grid-column: span 8; height: 600px; }
+        .small { grid-column: span 4; height: 600px; }
+        .tall { grid-column: span 4; height: 800px; }
+        .wide { grid-column: span 12; height: 500px; }
+
+        /* --- CHAT CONCIERGE --- */
+        #chat-trigger {
             position: fixed;
-            bottom: 100px;
-            right: 30px;
-            width: 350px;
-            background: white;
-            border-radius: 15px;
-            box-shadow: var(--shadow);
-            display: none;
-            flex-direction: column;
-            z-index: 2000;
-            overflow: hidden;
+            bottom: 40px; right: 40px;
+            background: var(--dark);
+            color: var(--gold);
+            width: 70px; height: 70px;
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            cursor: pointer; z-index: 2000;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+            font-size: 1.5rem;
             border: 1px solid var(--gold);
         }
 
-        .chat-header { background: var(--accent-blue); color: white; padding: 20px; font-weight: bold; }
-        .chat-body { padding: 20px; height: 300px; overflow-y: auto; font-size: 14px; background: var(--sky-blue); }
-        .chat-footer { padding: 10px; background: #eee; text-align: center; }
-
-        .bot-msg { background: white; padding: 10px; border-radius: 10px; margin-bottom: 10px; border-left: 4px solid var(--gold); }
-        .user-option { 
-            display: block; 
-            width: 100%; 
-            padding: 8px; 
-            margin: 5px 0; 
-            background: white; 
-            border: 1px solid var(--accent-blue); 
-            color: var(--accent-blue);
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 12px;
-            transition: 0.3s;
+        #chat-box {
+            position: fixed;
+            bottom: 120px; right: 40px;
+            width: 380px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+            display: none; flex-direction: column;
+            z-index: 2000; overflow: hidden;
+            border: 1px solid #eee;
         }
-        .user-option:hover { background: var(--accent-blue); color: white; }
 
-        /* --- CONTACT --- */
-        footer { background: var(--dark); color: white; padding: 60px 5%; text-align: center; }
-        .footer-email { color: var(--gold); font-size: 20px; text-decoration: none; display: block; margin: 20px 0; }
+        .chat-head { background: var(--sky-blue); color: white; padding: 25px; }
+        .chat-body { padding: 20px; height: 350px; overflow-y: auto; background: #fafafa; }
+        .bot-msg { background: white; padding: 15px; border-radius: 15px; margin-bottom: 15px; font-size: 0.9rem; border-left: 3px solid var(--gold); }
+        .chat-btn {
+            display: block; width: 100%; padding: 12px; margin: 8px 0;
+            background: transparent; border: 1px solid var(--sky-blue);
+            color: var(--sky-blue); cursor: pointer; border-radius: 8px;
+            font-size: 0.8rem; transition: 0.3s;
+        }
+        .chat-btn:hover { background: var(--sky-blue); color: white; }
 
-        @media (max-width: 768px) {
+        /* --- FOOTER --- */
+        footer { background: var(--dark); color: white; padding: 100px 6%; text-align: center; }
+        .footer-email { font-family: 'Cormorant Garamond', serif; font-size: 3rem; color: var(--gold); text-decoration: none; display: block; margin: 40px 0; }
+
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+
+        @media (max-width: 900px) {
+            .large, .small, .tall { grid-column: span 12; height: 400px; }
             .nav-links { display: none; }
-            #chat-window { width: 90%; right: 5%; }
         }
     </style>
 </head>
 <body>
 
-<nav>
-    <div class="logo-area">
+<nav id="navbar">
+    <div class="logo-box">
         <span class="logo">LIVEMORE</span>
         <span class="tagline">your vision our design</span>
     </div>
     <div class="nav-links">
-        <a href="#home">Home</a>
-        <a href="#projects">Projects</a>
-        <a href="#units">Units</a>
+        <a href="#hero">Home</a>
+        <a href="#showcase">Portfolio</a>
         <a href="#contact">Contact</a>
     </div>
 </nav>
 
-<section id="home" class="hero">
-    <div>
-        <h1>LIVEMORE</h1>
-        <p>your vision our design</p>
-    </div>
+<section class="hero" id="hero">
+    <h1>Architecture of <br> <i style="font-weight: 300;">Emotion.</i></h1>
 </section>
 
-<section id="units" class="section">
-    <div class="section-header">
-        <h2>Expertise & Units</h2>
-        <hr>
-    </div>
-    
-    <div class="unit-grid">
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&q=80" alt="Indian Kitchen">
-            <div class="card-body">
-                <h3>Indian Heritage Kitchen</h3>
-                <p>Functional modular kitchens optimized for Indian cooking styles.</p>
-            </div>
-        </div>
-        
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1583847268964-b28dc2f51ac9?auto=format&fit=crop&q=80" alt="Living Room">
-            <div class="card-body">
-                <h3>Luxury Living Area</h3>
-                <p>Grand social spaces with premium upholstery and sky-blue accents.</p>
+<section class="showcase" id="showcase">
+    <div class="grid">
+        <div class="unit large active">
+            <img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?q=80&w=1200" alt="Kitchen">
+            <div class="unit-info">
+                <p>Culinary Mastery</p>
+                <h3>Heritage & Ledge Kitchens</h3>
             </div>
         </div>
 
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1593062096033-9a26b09da705?auto=format&fit=crop&q=80" alt="TV Unit">
-            <div class="card-body">
-                <h3>Custom TV Units</h3>
-                <p>Modern floating designs with integrated LED lighting.</p>
+        <div class="unit small active">
+            <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?q=80&w=800" alt="Living">
+            <div class="unit-info">
+                <p>Social Space</p>
+                <h3>Grand Living & TV Units</h3>
             </div>
         </div>
 
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1601053073708-bb6b0d95d852?auto=format&fit=crop&q=80" alt="Pooja Room">
-            <div class="card-body">
-                <h3>Sacred Pooja Rooms</h3>
-                <p>Traditional aesthetics met with modern CNC cutting designs.</p>
+        <div class="unit tall active">
+            <img src="https://images.unsplash.com/photo-1601053073708-bb6b0d95d852?q=80&w=800" alt="Pooja">
+            <div class="unit-info">
+                <p>Divine Presence</p>
+                <h3>Pooja Sanctum</h3>
             </div>
         </div>
 
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&q=80" alt="Ceiling">
-            <div class="card-body">
-                <h3>Ceiling & Profile Lighting</h3>
-                <p>CRCK TU profiles and designer fall ceilings with smart LED control.</p>
+        <div class="unit large active">
+            <img src="https://images.unsplash.com/photo-1616594039964-ae9021a400a0?q=80&w=1200" alt="Bedroom">
+            <div class="unit-info">
+                <p>Restorative Design</p>
+                <h3>Master & Children's Suites</h3>
             </div>
         </div>
 
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1533090161767-e6ffed986c88?auto=format&fit=crop&q=80" alt="Materials">
-            <div class="card-body">
-                <h3>Laminates & Wood</h3>
-                <p>Premium multi-layered laminates and Grade-A timber finishes.</p>
+        <div class="unit wide active">
+            <img src="https://images.unsplash.com/photo-1534349762230-e0cadf78f5db?q=80&w=1500" alt="Lighting">
+            <div class="unit-info">
+                <p>Atmosphere</p>
+                <h3>Ceiling & CRCK TU Profile Lighting</h3>
+            </div>
+        </div>
+
+        <div class="unit small active">
+            <img src="https://images.unsplash.com/photo-1533090161767-e6ffed986c88?q=80&w=800" alt="Laminates">
+            <div class="unit-info">
+                <p>Texture</p>
+                <h3>Premium Laminates & Wood</h3>
             </div>
         </div>
     </div>
 </section>
 
-<div id="chat-btn" onclick="toggleChat()">💬</div>
+<div id="chat-trigger" onclick="toggleChat()">
+    <i class="fa-solid fa-comment-dots"></i>
+</div>
 
-<div id="chat-window">
-    <div class="chat-header">LIVEMORE Assistant</div>
-    <div class="chat-body" id="chat-body">
-        <div class="bot-msg">Welcome to LIVEMORE LUXURY. I am your Sales Executive. How can I assist you today?</div>
-        <button class="user-option" onclick="botReply('wood')">Premium Wood & Laminates</button>
-        <button class="user-option" onclick="botReply('ceiling')">Ceiling & Lighting</button>
-        <button class="user-option" onclick="botReply('units')">Kitchen & Bedroom Units</button>
-        <button class="user-option" onclick="botReply('email')">Speak with an Expert</button>
+<div id="chat-box">
+    <div class="chat-head">
+        <strong>LIVEMORE CONCIERGE</strong>
+        <p style="font-size: 0.7rem; opacity: 0.8;">Sales Executive Online</p>
     </div>
-    <div class="chat-footer">LIVEMORE | Design Studio</div>
+    <div class="chat-body" id="chat-content">
+        <div class="bot-msg">Welcome. I am here to guide you through our premium materials, ceiling solutions, and bespoke units. What inspires you today?</div>
+        <button class="chat-btn" onclick="askBot('wood')">Premium Wood & Laminates</button>
+        <button class="chat-btn" onclick="askBot('ceiling')">Ceiling & CRCK TU Profiles</button>
+        <button class="chat-btn" onclick="askBot('units')">Kitchen & Living Units</button>
+        <button class="chat-btn" onclick="askBot('contact')">Book a Consultation</button>
+    </div>
 </div>
 
 <footer id="contact">
-    <h2>Ready to transform your space?</h2>
-    <p>Drop us a mail for a personalized consultation</p>
+    <p style="letter-spacing: 5px; text-transform: uppercase; font-weight: 300;">Ready to begin?</p>
     <a href="mailto:livmoreluxury@gmail.com" class="footer-email">livmoreluxury@gmail.com</a>
-    <p>📍 Hyderabad, India | 📞 +91 7659855099</p>
-    <br>
-    <p style="font-size: 12px; color: #888;">© 2026 LIVEMORE LUXURY. All Rights Reserved.</p>
+    <div style="color: #666; font-size: 0.8rem; letter-spacing: 2px;">
+        JUBILEE HILLS, HYDERABAD | +91 7659855099
+    </div>
 </footer>
 
 <script>
+    // Reveal units on scroll
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) entry.target.classList.add('active');
+        });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.unit').forEach(unit => observer.observe(unit));
+
+    // Navbar scroll effect
+    window.onscroll = function() {
+        const nav = document.getElementById('navbar');
+        if (window.pageYOffset > 100) {
+            nav.style.background = "rgba(255,255,255,0.95)";
+            nav.style.padding = "15px 6%";
+        } else {
+            nav.style.background = "transparent";
+            nav.style.padding = "30px 6%";
+        }
+    };
+
     function toggleChat() {
-        const win = document.getElementById('chat-window');
-        win.style.display = win.style.display === 'flex' ? 'none' : 'flex';
+        const chat = document.getElementById('chat-box');
+        chat.style.display = (chat.style.display === 'flex') ? 'none' : 'flex';
     }
 
-    function botReply(type) {
-        const body = document.getElementById('chat-body');
-        let response = "";
+    function askBot(topic) {
+        const content = document.getElementById('chat-content');
+        let reply = "";
+        
+        if(topic === 'wood') reply = "We source elite Grade-A timber and high-pressure premium laminates. Our textures range from soft-touch silk to deep grain wood.";
+        if(topic === 'ceiling') reply = "Our CRCK TU Profile lighting is integrated seamlessly into our bespoke false ceilings for a shadowless, luxury glow.";
+        if(topic === 'units') reply = "We specialize in 'Indian Cultural Kitchens' and 'Ledge' systems that maximize utility without sacrificing the gold aesthetic.";
+        if(topic === 'contact') reply = "Excellent. Please drop an official inquiry to <strong>livmoreluxury@gmail.com</strong>. Our lead designer will contact you.";
 
-        if(type === 'wood') {
-            response = "We offer premium Teak and Engineered wood options alongside high-gloss and matte laminates. Would you like a catalog via email?";
-        } else if(type === 'ceiling') {
-            response = "Our CRCK TU profile lighting and false ceilings are our specialty. We provide both ambient and mood lighting solutions.";
-        } else if(type === 'units') {
-            response = "From Indian-culture kitchens to master bedrooms and children's rooms, we customize every inch. Tell us your requirements at our email.";
-        } else if(type === 'email') {
-            response = "Please drop a detailed mail to <b>livmoreluxury@gmail.com</b>. Our executive will call you back within 24 hours.";
-        }
-
-        const msg = document.createElement('div');
-        msg.className = "bot-msg";
-        msg.innerHTML = response;
-        body.appendChild(msg);
-        body.scrollTop = body.scrollHeight;
+        const div = document.createElement('div');
+        div.className = 'bot-msg';
+        div.innerHTML = reply;
+        content.appendChild(div);
+        content.scrollTop = content.scrollHeight;
     }
 </script>
 
