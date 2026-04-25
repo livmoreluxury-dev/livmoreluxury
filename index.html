@@ -6,28 +6,25 @@
     <title>LIVMORE LUXURY | Bespoke Studio & Real Estate</title>
     
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Montserrat:wght@200;300;400;500;600&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
     <style>
         :root {
-            /* Definitive Luxury Palette from Lumière Meridian */
             --midnight: #0A0F1A; 
             --gold: #C5A059;     
             --white: #ffffff;
             --smoke: #F8F8F8;
             --black: #000000;
-            --charcoal: #333;
             --transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Montserrat', sans-serif; background: var(--white); color: var(--midnight); overflow-x: hidden; scroll-behavior: smooth; }
+        body { font-family: 'Montserrat', sans-serif; background: var(--white); color: var(--midnight); overflow-x: hidden; }
         h1, h2, h3, h4 { font-family: 'Cinzel', serif; letter-spacing: 2px; }
 
-        /* ====== ELITE FOLLOW CURSOR ====== */
         #dot { width: 6px; height: 6px; background: var(--gold); position: fixed; border-radius: 50%; pointer-events: none; z-index: 10000; mix-blend-mode: difference; }
 
-        /* ====== NAVIGATION (ELITE AESTHETICS) ====== */
+        /* ====== NAVIGATION ====== */
         nav {
             position: fixed; top: 0; width: 100%; padding: 20px 8%;
             display: flex; justify-content: space-between; align-items: center;
@@ -35,8 +32,6 @@
             backdrop-filter: blur(15px);
         }
         .logo-box { display: flex; align-items: center; gap: 15px; }
-        
-        /* Definitive Logo & Tagline from user input */
         .logo-text { font-family: 'Cinzel'; color: var(--gold); font-size: 1.4rem; letter-spacing: 4px; font-weight: 700; }
         .logo-text span { color: var(--white); }
         .logo-tagline { color: var(--white); font-size: 0.6rem; letter-spacing: 2.5px; text-transform: uppercase; margin-top: 2px; }
@@ -45,20 +40,16 @@
         .nav-links a { text-decoration: none; color: var(--white); margin-left: 35px; font-weight: 600; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 2px; transition: 0.3s; cursor: pointer; }
         .nav-links a:hover { color: var(--gold); }
 
-        /* DROPDOWN AESTHETICS */
+        /* DROPDOWN */
         .dropdown { position: relative; display: inline-block; }
         .dropdown-menu {
             position: absolute; top: 100%; left: -20px;
             width: 250px; background: rgba(10, 15, 26, 1); border: 1px solid var(--gold);
-            display: none; box-shadow: 0 15px 40px rgba(0,0,0,0.6);
-            margin-top: 15px; z-index: 999;
+            display: none; box-shadow: 0 15px 40px rgba(0,0,0,0.6); margin-top: 15px; z-index: 999;
         }
-        .dropdown-menu a { display: block; padding: 15px 25px; color: var(--white); margin: 0; font-weight: 400; border-bottom: 1px solid rgba(255,255,255,0.05); }
-        .dropdown-menu a:hover { color: var(--gold); }
-        .dropdown-menu a:last-child { border-bottom: none; }
+        .dropdown-menu a { display: block; padding: 15px 25px; color: var(--white); margin: 0; border-bottom: 1px solid rgba(255,255,255,0.05); }
         .dropdown:hover .dropdown-menu { display: block; }
 
-        /* GET FREE QUOTE BUTTON (LUMIERE MERIDIAN STYLE) */
         .quote-btn { background: #DBC384; color: #111; padding: 18px 30px; font-weight: 600; border: none; font-size: 0.75rem; letter-spacing: 3px; cursor: pointer; text-transform: uppercase; margin-left: 50px; font-family: 'Cinzel'; }
 
         /* ====== HERO ====== */
@@ -69,100 +60,69 @@
         .hero h1 { font-size: clamp(3rem, 10vw, 7rem); letter-spacing: 15px; margin-bottom: 10px; }
         .hero p { color: var(--gold); letter-spacing: 8px; text-transform: uppercase; font-size: 1.1rem; }
 
-        /* ====== INTERNAL "PAGES" (REAL ESTATE / CONSTRUCTION / VISION) ====== */
-        .internal-page { display: none; min-height: 100vh; background: var(--midnight); color: white; padding: 160px 10% 80px; }
-        .close-btn { position: absolute; top: 40px; right: 80px; color: var(--gold); font-size: 3rem; cursor: pointer; transition: 0.3s; z-index: 2001; }
-        .close-btn:hover { transform: rotate(90deg); }
+        /* ====== THE S-CURVE PATH ====== */
+        .roadmap-section { padding: 120px 5%; background: var(--white); text-align: center; position: relative; }
+        .section-title { color: var(--midnight); font-size: 3rem; margin-bottom: 100px; }
         
-        .page-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
-        .page-img { width: 100%; height: 60vh; object-fit: cover; border: 1px solid var(--gold); background-size: cover; background-position: center; }
-        .page-text h2 { font-size: 4rem; color: var(--gold); margin-bottom: 25px; }
-        .page-text p { font-size: 1.1rem; line-height: 2; color: #ccc; margin-bottom: 30px; }
-
-        /* REFINED GO BACK BUTTONS FROM LUMIERE MERIDIAN */
-        .go-back { background: transparent; border: 1px solid var(--gold); color: var(--gold); padding: 15px 40px; cursor: pointer; font-size: 0.7rem; font-weight: 500; text-transform: uppercase; letter-spacing: 3px; font-family: 'Cinzel'; transition: 0.3s; }
-        .go-back:hover { background: var(--gold); color: var(--midnight); }
-
-        /* ====== "THE PATH" SNAKE (HORIZONTAL / NON-OVERLAPPING) ====== */
-        .roadmap-section { padding: 120px 5%; background: var(--soft-gray); text-align: center; }
-        .roadmap-section .section-title { color: var(--midnight); font-size: 3rem; margin-bottom: 80px; position: relative; }
-        
-        /* complex S-Curve dotted wave (~ ~ ~ ~) - HORIZONTAL & CLEAN */
         .s-line { 
-            position: relative; max-width: 1200px; margin: 0 auto;
-            border-bottom: 2px dashed var(--gold); z-index: 1; 
+            position: absolute; top: 60%; left: 10%; right: 10%; height: 2px;
+            background: repeating-linear-gradient(90deg, var(--gold), var(--gold) 15px, transparent 15px, transparent 30px);
+            z-index: 1; 
         }
         
-        .steps-wrapper { display: flex; justify-content: space-between; position: relative; top: -60px; z-index: 2; max-width: 1200px; margin: 0 auto; }
+        .steps-wrapper { display: flex; justify-content: space-between; position: relative; z-index: 2; max-width: 1200px; margin: 0 auto; }
         .step-module { width: 18%; position: relative; }
-        
         .step-marker { 
-            width: 120px; height: 120px; border: 2px solid var(--gold); background: var(--midnight); 
+            width: 100px; height: 100px; border: 2px solid var(--gold); background: var(--midnight); 
             border-radius: 50%; color: var(--gold); font-weight: bold; font-family: 'Cinzel'; font-size: 1.4rem;
             margin: 0 auto 30px; display: flex; align-items: center; justify-content: center; 
+            transition: 0.5s;
         }
+        .step-module:nth-child(even) { transform: translateY(-50px); }
+        .step-module:nth-child(odd) { transform: translateY(50px); }
 
-        /* Alternate vertical positioning to create S-Curve without clashing */
-        .step-module:nth-child(even) { top: -60px; }
-        .step-module:nth-child(odd) { top: 60px; }
-
-        .step-module h4 { font-size: 0.9rem; margin-bottom: 10px; color: var(--midnight); text-transform: uppercase; letter-spacing: 2px; }
-        .step-module p { font-size: 0.75rem; color: #666; padding: 0 10px; line-height: 1.6; }
-
-        /* ====== INFINITE AUTO-SCROLL GALLERY ====== */
-        .signature-pieces { background: var(--midnight); padding: 120px 0; overflow: hidden; }
+        /* ====== INTERIOR DESIGN (AUTO-SCROLL + ICONS) ====== */
+        .signature-pieces { background: var(--midnight); padding: 120px 0; overflow: hidden; position: relative; }
         .gallery-header { color: var(--gold); font-size: 2.5rem; text-align: center; margin-bottom: 80px; text-transform: uppercase; }
         
-        /* Auto Scroll infinite track */
-        .infinite-scroll { display: flex; width: calc(300px * 14); animation: scroll infinite 30s linear; gap: 20px; }
-        .infinite-scroll:hover { animation-play-state: paused; } /* Pauses on hover */
+        /* Small Scrolling Icons */
+        .scroll-icon { position: absolute; top: 55%; z-index: 10; color: var(--gold); font-size: 1.5rem; cursor: pointer; background: rgba(0,0,0,0.5); padding: 10px; border-radius: 5px; transition: 0.3s; }
+        .scroll-icon.left { left: 30px; }
+        .scroll-icon.right { right: 30px; }
+        .scroll-icon:hover { background: var(--gold); color: var(--midnight); }
+
+        .infinite-scroll { display: flex; width: max-content; animation: scroll 30s linear infinite; gap: 20px; padding: 0 20px; }
+        .infinite-scroll:hover { animation-play-state: paused; }
         
-        .piece-thumb { 
-            width: 300px; height: 450px; flex-shrink: 0; position: relative; overflow: hidden; 
-            border: 1px solid rgba(212,175,55,0.1); 
-        }
-        .piece-thumb img { width: 100%; height: 100%; object-fit: cover; transition: 1.5s; opacity: 0.8; }
-        .piece-thumb:hover img { transform: scale(1.1); filter: grayscale(0.5); opacity: 0.3; }
+        .piece-thumb { width: 300px; height: 450px; flex-shrink: 0; position: relative; overflow: hidden; border: 1px solid rgba(197, 160, 89, 0.2); }
+        .piece-thumb img { width: 100%; height: 100%; object-fit: cover; transition: 1.5s; }
+        .piece-thumb:hover img { transform: scale(1.1); filter: brightness(0.4); }
         
-        .piece-info { position: absolute; bottom: 30px; left: 30px; opacity: 0; transition: 0.5s; pointer-events: none; }
+        .piece-info { position: absolute; bottom: 30px; left: 30px; opacity: 0; transition: 0.5s; }
         .piece-thumb:hover .piece-info { opacity: 1; }
         .piece-info h3 { color: var(--gold); font-size: 1.2rem; }
-        .piece-info p { color: white; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 2px; }
+        .piece-info p { color: white; font-size: 0.7rem; text-transform: uppercase; }
 
-        @keyframes scroll {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(calc(-300px * 7)); }
-        }
+        @keyframes scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
 
-        /* ====== VISION & PILLARS SECTION (LAST TILE ABOVE FOOTER) ====== */
-        .pillars-last { background: var(--white); padding: 120px 10%; border-top: 1px solid #eee; }
-        .last-tile-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; text-align: center; }
-        .pillar-last h2 { font-size: 1.8rem; color: var(--gold); margin-bottom: 25px; font-family: 'Cinzel'; }
-        .pillar-last p { font-size: 1rem; line-height: 1.8; color: #555; }
-
-        /* ====== THE "BOAT" NAV DOCK (LUMIERE MERIDIAN STYLE) ====== */
-        .boat-dock {
-            position: fixed; top: 50%; right: 40px; transform: translateY(-50%);
-            background: rgba(6, 9, 15, 0.9); border: 1px solid rgba(212, 175, 55, 0.3);
-            display: flex; flex-direction: column; gap: 40px; padding: 40px 18px; border-radius: 10px;
-            z-index: 2000; backdrop-filter: blur(10px); text-align: center;
-        }
-        .boat-dock a { 
-            color: white; text-decoration: none; font-size: 0.7rem; 
-            letter-spacing: 2px; font-weight: 600; writing-mode: vertical-rl; transform: rotate(180deg);
-            transition: 0.3s; 
-        }
-        .boat-dock a:hover { color: var(--gold); letter-spacing: 4px; }
+        /* ====== INTERNAL PAGE SYSTEM ====== */
+        .internal-page { display: none; min-height: 100vh; background: var(--midnight); color: white; padding: 160px 10% 80px; position: fixed; top: 0; left: 0; width: 100%; z-index: 2000; overflow-y: auto; }
+        .close-btn { position: absolute; top: 40px; right: 60px; color: var(--gold); font-size: 3rem; cursor: pointer; z-index: 2001; }
+        .page-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+        .page-img { width: 100%; height: 70vh; object-fit: cover; border: 1px solid var(--gold); }
+        .page-text h2 { font-size: 3.5rem; color: var(--gold); margin-bottom: 20px; }
+        .page-text p { line-height: 2; color: #ccc; margin-bottom: 30px; }
+        .go-back { background: transparent; border: 1px solid var(--gold); color: var(--gold); padding: 15px 35px; cursor: pointer; text-transform: uppercase; letter-spacing: 2px; }
 
         /* ====== FOOTER ====== */
-        footer { background: #030508; color: white; padding: 100px 10%; border-top: 1px solid #111; text-align: center; }
-        .footer-logo { font-family: 'Cinzel'; color: var(--gold); font-size: 2rem; margin-bottom: 20px; letter-spacing: 4px; font-weight: 700; }
-        .footer-logo span { color: var(--white); }
-        .footer-address { margin: 40px 0; color: #888; font-size: 1rem; letter-spacing: 1.5px; line-height: 2.2; }
-        .f-box b { color: var(--gold); display: block; margin-bottom: 15px; font-size: 0.9rem; letter-spacing: 2px; text-transform: uppercase; }
+        footer { background: #030508; color: white; padding: 100px 10%; text-align: center; border-top: 1px solid #111; }
+        .footer-logo { font-family: 'Cinzel'; color: var(--gold); font-size: 2rem; margin-bottom: 20px; }
+        .footer-address { margin: 30px 0; color: #888; font-size: 0.9rem; line-height: 1.8; letter-spacing: 1px; }
 
-        /* Smooth Reveal animations */
-        .reveal { opacity: 0; transform: translateY(40px); transition: 1s cubic-bezier(0.16, 1, 0.3, 1); }
+        .boat-dock { position: fixed; top: 50%; right: 30px; transform: translateY(-50%); display: flex; flex-direction: column; gap: 30px; z-index: 1000; background: rgba(10, 15, 26, 0.8); padding: 30px 15px; border-radius: 50px; border: 1px solid var(--gold); }
+        .boat-dock a { color: white; text-decoration: none; font-size: 0.6rem; writing-mode: vertical-rl; transform: rotate(180deg); letter-spacing: 2px; }
+
+        .reveal { opacity: 0; transform: translateY(40px); transition: 1s ease-out; }
         .reveal.active { opacity: 1; transform: translateY(0); }
     </style>
 </head>
@@ -184,10 +144,9 @@
         <div class="dropdown">
             <a>Interior Design <i class="fa fa-caret-down"></i></a>
             <div class="dropdown-menu">
-                <a onclick="filter('Kitchen')">Gola Kitchen</a>
-                <a onclick="filter('Puja')">Sacred Puja Units</a>
-                <a onclick="filter('Bedroom')">Bedroom Design</a>
-                <a onclick="filterPort('all')">View All Portfolio</a>
+                <a href="#">Gola Kitchen</a>
+                <a href="#">Sacred Puja Units</a>
+                <a href="#">Bedroom Design</a>
             </div>
         </div>
         <a onclick="SPA('realestate')">Real Estate</a>
@@ -236,40 +195,42 @@
     </section>
 
     <section id="gallery" class="signature-pieces reveal">
-        <h2 class="gallery-header">Signature Pieces</h2>
-        <div class="infinite-scroll">
-            <div class="piece-thumb" data-cat="Kitchen"><img src="ede3a0.png"><div class="piece-info"><h3>Gola Kitchen</h3><p>Minimalist linear engineering</p></div></div>
-            <div class="piece-thumb" data-cat="Puja"><img src="ee3a17.png"><div class="piece-info"><h3>Puja Unit</h3><p>CNC Latice and Onyx</p></div></div>
-            <div class="piece-thumb" data-cat="Bedroom"><img src="ee423a.png"><div class="piece-info"><h3>Laminated Wardrobe</h3><p>High-Grade Openable</p></div></div>
-            <div class="piece-thumb" data-cat="Bedroom"><img src="https://images.unsplash.com/photo-1595428774223-ef52624120d2?q=80&w=800"><div class="piece-info"><h3>Sliding Wardrobe</h3><p>Fluted Glass System</p></div></div>
-            <div class="piece-thumb" data-cat="Kitchen"><img src="https://images.unsplash.com/photo-1616486341351-702524d73ccc?q=80&w=800"><div class="piece-info"><h3>PU Wardrobe</h3><p>High-Gloss Seamless</p></div></div>
-            <div class="piece-thumb" data-cat="Bedroom"><img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&w=800"><div class="piece-info"><h3>Living Paneling</h3><p>Marble and Slatted Wood</p></div></div>
-            <div class="piece-thumb" data-cat="Kitchen"><img src="https://images.unsplash.com/photo-1615529182904-14819c35db37?q=80&w=800"><div class="piece-info"><h3>Veneer Ceiling</h3><p>Architectural Cove Light</p></div></div>
-            <div class="piece-thumb"><img src="ede3a0.png"></div>
-            <div class="piece-thumb"><img src="ee3a17.png"></div>
-            <div class="piece-thumb"><img src="ee423a.png"></div>
-            <div class="piece-thumb"><img src="https://images.unsplash.com/photo-1595428774223-ef52624120d2?q=80&w=800"></div>
-            <div class="piece-thumb"><img src="https://images.unsplash.com/photo-1616486341351-702524d73ccc?q=80&w=800"></div>
-            <div class="piece-thumb"><img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&w=800"></div>
-            <div class="piece-thumb"><img src="https://images.unsplash.com/photo-1615529182904-14819c35db37?q=80&w=800"></div>
+        <h2 class="gallery-header">Interior Design</h2>
+        
+        <i class="fas fa-chevron-left scroll-icon left" onclick="scrollGal(-300)"></i>
+        <i class="fas fa-chevron-right scroll-icon right" onclick="scrollGal(300)"></i>
+
+        <div class="infinite-scroll" id="scrollTrack">
+            <div class="piece-thumb"><img src="image_ede3a0.png"><div class="piece-info"><h3>Gola Kitchen</h3><p>Elite Engineering</p></div></div>
+            <div class="piece-thumb"><img src="image_ee3a17.png"><div class="piece-info"><h3>Puja Unit</h3><p>Sacred Design</p></div></div>
+            <div class="piece-thumb"><img src="image_ee423a.png"><div class="piece-info"><h3>Wardrobe</h3><p>Laminated High-Grade</p></div></div>
+            <div class="piece-thumb"><img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=800"><div class="piece-info"><h3>Living Area</h3><p>Architectural Paneling</p></div></div>
+            <div class="piece-thumb"><img src="image_ede3a0.png"></div>
+            <div class="piece-thumb"><img src="image_ee3a17.png"></div>
+            <div class="piece-thumb"><img src="image_ee423a.png"></div>
         </div>
     </section>
 
-    <section class="pillars-last reveal">
-        <div class="last-tile-grid">
-            <div class="pillar-last"><h2>Vision</h2><p>To redefine luxury living through architectural precision and ancestral craftsmanship. We curate homes that act as a celebrated extension of your prestige.</p></div>
-            <div class="pillar-last"><h2>Mission</h2><p>Ensuring 100% transparency through itemized technical blueprints and site honesty. No hidden costs. Quality is our definitive metric.</p></div>
-            <div class="pillar-last"><h2>Why Us</h2><p>With 40 years of collective intelligence, we master the balance of form and function. Every project is handled by a single dedicated studio director.</p></div>
+    <footer id="website-footer">
+        <div class="footer-logo">LIVMORE <span>LUXURY</span></div>
+        <div class="footer-address">
+            <p><strong>Headquarters & Experience Centre:</strong></p>
+            <p>Plot No.1282/A, Road No 64, Jubilee Hills, Hyderabad, Telangana - 500033</p>
         </div>
-    </section>
+        <div style="margin: 20px 0;">
+            <p>📞 +91 7659855099 | 📧 livmoreluxury@gmail.com</p>
+        </div>
+        <p style="font-size: 0.6rem; color: #444;">© 2026 LIVMORE LUXURY. ALL RIGHTS RESERVED.</p>
+    </footer>
 </div>
+
 <div id="about-page" class="internal-page">
     <div class="close-btn" onclick="SPA('home')">×</div>
     <div class="page-grid">
-        <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=1000" class="page-img" alt="Livmore Studio">
+        <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=1000" class="page-img">
         <div class="page-text">
             <h2>The Vision</h2>
-            <p>Our vision is to bridge the gap between high-end architectural concept and tangible reality. In a market often clouded by ambiguity, we represent a standard of absolute structural honesty and aesthetic clarity. We do not build spaces; we architect legacies.</p>
+            <p>Our vision is to bridge the gap between high-end architectural concept and tangible reality. We represent a standard of absolute structural honesty and aesthetic clarity.</p>
             <button class="go-back" onclick="SPA('home')">← Go Back</button>
         </div>
     </div>
@@ -278,10 +239,10 @@
 <div id="construction-page" class="internal-page">
     <div class="close-btn" onclick="SPA('home')">×</div>
     <div class="page-grid">
-        <img src="https://images.unsplash.com/photo-1503387762-592dea58ef23?q=80&w=1000" class="page-img" alt="Architectural Site">
+        <img src="https://images.unsplash.com/photo-1503387762-592dea58ef23?q=80&w=1000" class="page-img">
         <div class="page-text">
             <h2>Construction</h2>
-            <p>Livmore Construction is a masterclass in structural discipline. We specialize in complex, high-standard residential legacy projects. Our engineering is non-negotiable, and our material standards are laboratory-verified. Aiming for seismic resilience and lifelong structural truth.</p>
+            <p>Masterclass in structural discipline. We specialize in complex, high-standard residential legacy projects with laboratory-verified material standards.</p>
             <button class="go-back" onclick="SPA('home')">← Go Back</button>
         </div>
     </div>
@@ -290,63 +251,42 @@
 <div id="realestate-page" class="internal-page">
     <div class="close-btn" onclick="SPA('home')">×</div>
     <div class="page-grid">
-        <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=1000" class="page-img" alt="Elite Real Estate">
+        <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=1000" class="page-img">
         <div class="page-text">
             <h2>Real Estate</h2>
-            <p>We provide exclusive access to off-market premium lands in Hyderabad's premier locales. We do not function as brokers; we act as site architects and legal truth-tellers. Aiming to educate our elite clientele on investment integrity and property structural truth before they commit.</p>
+            <p>Exclusive access to off-market premium lands in Hyderabad. We act as site architects and legal truth-tellers for elite investment integrity.</p>
             <button class="go-back" onclick="SPA('home')">← Go Back</button>
         </div>
     </div>
 </div>
+
 <div class="boat-dock">
-    <a href="javascript:void(0)" onclick="SPA('home'); setTimeout(() => document.getElementById('gallery').scrollIntoView(), 100);">PORTFOLIO</a>
+    <a href="javascript:void(0)" onclick="SPA('home');">PORTFOLIO</a>
     <a href="mailto:livmoreluxury@gmail.com">INQUIRY</a>
     <a href="tel:+917659855099">CONCIERGE</a>
 </div>
-
-<footer id="website-footer">
-    <div class="footer-logo">LIVMORE <span>LUXURY</span></div>
-    <div class="footer-address">
-        <p><strong>Headquarters & Experience Centre:</strong></p>
-        <p>Plot No.1282/A, Road No 64, Jubilee Hills,</p>
-        <p>Hyderabad, Telangana - 500033</p>
-    </div>
-    <div style="margin: 40px 0;">
-        <p>📞 +91 7659855099</p>
-        <p>📧 livmoreluxury@gmail.com</p>
-    </div>
-    <p style="font-size: 0.7rem; color: #444; margin-top: 50px;">© 2026 LIVMORE LUXURY INTERIOR ARCHITECTURE. ALL RIGHTS RESERVED.</p>
-</footer>
 
 <script>
     const dot = document.getElementById('dot');
     document.addEventListener('mousemove', e => { dot.style.left = e.clientX+'px'; dot.style.top = e.clientY+'px'; });
 
-    // Smooth Reveal observer
     const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('active'); });
     }, { threshold: 0.1 });
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-    // complex SPA Logic to manage built-in internal "pages"
     function SPA(view) {
-        // First hide everything
-        document.getElementById('website-view').style.display = 'none';
-        document.getElementById('website-footer').style.display = 'none';
-        
-        // Hide all internal views
+        document.getElementById('website-view').style.display = (view === 'home') ? 'block' : 'none';
         const pages = document.querySelectorAll('.internal-page');
         pages.forEach(p => p.style.display = 'none');
+        if(view !== 'home') document.getElementById(view + '-page').style.display = 'block';
+        window.scrollTo(0,0);
+    }
 
-        // Show target page or restore website
-        if(view === 'home') {
-            document.getElementById('website-view').style.display = 'block';
-            document.getElementById('website-footer').style.display = 'block';
-        } else {
-            const targetPage = document.getElementById(view + '-page');
-            if (targetPage) targetPage.style.display = 'block';
-        }
-        window.scrollTo(0,0); // Jump to top
+    function scrollGal(amt) {
+        const track = document.getElementById('scrollTrack');
+        track.style.animation = 'none'; // Pause animation to allow manual scroll
+        track.scrollBy({ left: amt, behavior: 'smooth' });
     }
 </script>
 
