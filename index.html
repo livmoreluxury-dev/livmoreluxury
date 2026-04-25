@@ -4,174 +4,95 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>LIVMORE LUXURY | Your Vision Our Design</title>
+<title>LIVMORE LUXURY</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:wght@200;400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:wght@300;500;600&display=swap" rel="stylesheet">
 
 <style>
-:root {
-    --primary-blue: #1A3C5E;
-    --accent-gold: #C5A059;
-    --ivory: #F9F9F7;
-    --dark: #121212;
-}
-
-/* GLOBAL */
-body {
-    margin: 0;
-    font-family: 'Montserrat', sans-serif;
-    background: linear-gradient(to bottom, #ffffff, #f5f3ef);
-}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Montserrat',sans-serif;background:#f8f6f2;}
 
 /* NAV */
-nav {
-    position: fixed;
-    width: 100%;
-    padding: 15px 8%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: rgba(255,255,255,0.95);
-    backdrop-filter: blur(10px);
-    border-bottom: 2px solid var(--accent-gold);
-    z-index: 1000;
+nav{
+display:flex;justify-content:space-between;align-items:center;
+padding:15px 5%;background:#fff;position:sticky;top:0;z-index:1000;
+border-bottom:1px solid #ddd;
 }
-
-/* LOGO */
-.logo-container {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-}
-
-.logo-img {
-    height: 75px;
-    filter: drop-shadow(0 2px 6px rgba(0,0,0,0.1));
-}
-
-.logo-text h1 {
-    font-family: 'Cinzel', serif;
-    font-size: 24px;
-    margin: 0;
-    color: #2f2f3a;
-}
-
-.logo-text p {
-    margin: 0;
-    font-size: 11px;
-    letter-spacing: 4px;
-    color: var(--accent-gold);
-}
-
-/* NAV LINKS */
-.nav-links a {
-    text-decoration: none;
-    margin-left: 30px;
-    color: var(--primary-blue);
-    font-weight: 600;
-}
+.logo img{height:65px;}
+.nav-links a{margin-left:25px;text-decoration:none;color:#1A3C5E;font-weight:600;}
 
 /* HERO */
-.hero {
-    height: 100vh;
-    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.4)),
-    url('https://images.unsplash.com/photo-1600607687920-4e2a09cf159d');
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    text-align: center;
+.hero{
+height:90vh;
+background:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.4)),
+url('https://images.unsplash.com/photo-1600607687920-4e2a09cf159d') center/cover;
+display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;
 }
+.hero h1{font-family:'Cinzel',serif;font-size:60px;}
+.hero p{letter-spacing:4px;color:#C5A059;}
 
-.hero h1 {
-    font-family: 'Cinzel', serif;
-    font-size: 60px;
-}
-
-.hero p {
-    color: var(--accent-gold);
-    letter-spacing: 5px;
-}
+/* SECTION */
+.section{padding:80px 5%;}
 
 /* ABOUT */
-.about {
-    padding: 100px 8%;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 50px;
-    background: #fff;
+.about{text-align:center;max-width:900px;margin:auto;}
+.about h2{font-family:'Cinzel';margin-bottom:20px;}
+
+/* GRID */
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:25px;
 }
 
-.about h2 {
-    font-family: 'Cinzel', serif;
-    color: var(--primary-blue);
+/* CARD */
+.card{
+background:#fff;border-radius:8px;overflow:hidden;
+box-shadow:0 5px 15px rgba(0,0,0,0.1);
+transition:0.3s;
 }
-
-.about img {
-    width: 100%;
-    border-radius: 10px;
-}
-
-/* PORTFOLIO */
-.section {
-    padding: 100px 8%;
-}
-
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
-    gap: 25px;
-}
-
-.card img {
-    width: 100%;
-    border-radius: 10px;
-}
+.card img{width:100%;height:250px;object-fit:cover;}
+.card:hover{transform:translateY(-10px);}
+.card-title{padding:15px;font-weight:600;}
 
 /* FOOTER */
-footer {
-    background: #121212;
-    color: white;
-    text-align: center;
-    padding: 60px;
+.footer{
+background:#0f0f0f;color:#fff;padding:80px 5%;text-align:center;
+}
+.footer-logo{font-family:'Cinzel';font-size:32px;color:#C5A059;}
+.footer-tag{letter-spacing:3px;color:#ccc;margin-bottom:20px;}
+.footer-info{margin-top:20px;color:#bbb;line-height:1.8;}
+.footer-copy{margin-top:30px;font-size:12px;color:#666;}
+
+/* CHAT */
+#chat-btn{
+position:fixed;bottom:20px;right:20px;
+background:#1A3C5E;color:#fff;border-radius:50%;
+width:60px;height:60px;display:flex;align-items:center;justify-content:center;
+cursor:pointer;font-size:24px;
+}
+#chat-box{
+position:fixed;bottom:90px;right:20px;
+width:300px;background:#fff;border-radius:10px;
+box-shadow:0 10px 30px rgba(0,0,0,0.2);
+display:none;flex-direction:column;
+}
+.chat-header{
+background:#1A3C5E;color:#fff;padding:10px;
+display:flex;justify-content:space-between;
+}
+.chat-body{padding:15px;font-size:14px;}
+.chat-body button{
+display:block;width:100%;margin-top:8px;padding:8px;
+border:none;background:#C5A059;color:#fff;cursor:pointer;
 }
 
-/* ===== SCROLL ANIMATIONS ===== */
-.reveal {
-    opacity: 0;
-    transform: translateY(60px);
-    transition: all 1s ease;
-}
+/* SCROLL */
+.reveal{opacity:0;transform:translateY(40px);transition:0.8s;}
+.reveal.active{opacity:1;transform:translateY(0);}
 
-.reveal.active {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.zoom {
-    overflow: hidden;
-}
-
-.zoom img {
-    transform: scale(1.2);
-    transition: transform 1.5s ease;
-}
-
-.zoom.active img {
-    transform: scale(1);
-}
-
-.delay-1 { transition-delay: 0.2s; }
-.delay-2 { transition-delay: 0.4s; }
-.delay-3 { transition-delay: 0.6s; }
-
-/* MOBILE */
-@media(max-width: 900px){
-    .about {
-        grid-template-columns: 1fr;
-    }
+@media(max-width:768px){
+.hero h1{font-size:40px;}
 }
 </style>
 </head>
@@ -180,83 +101,105 @@ footer {
 
 <!-- NAV -->
 <nav>
-    <div class="logo-container">
-        <img src="imageslogo.png" class="logo-img">
-        <div class="logo-text">
-            <h1>LIVMORE LUXURY</h1>
-            <p>— YOUR VISION OUR DESIGN —</p>
-        </div>
-    </div>
-
-    <div class="nav-links">
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#portfolio">Portfolio</a>
-    </div>
+<div class="logo">
+<img src="imageslogo.png">
+</div>
+<div class="nav-links">
+<a href="#home">Home</a>
+<a href="#about">About</a>
+<a href="#work">Work</a>
+</div>
 </nav>
 
 <!-- HERO -->
 <section id="home" class="hero">
-    <div class="reveal">
-        <h1>LIVMORE LUXURY</h1>
-        <p>Your Vision Our Design</p>
-    </div>
+<div class="reveal">
+<h1> LIVMORE LUXURY </h1>
+<p>YOUR VISION OUR DESIGN</p>
+</div>
 </section>
 
 <!-- ABOUT -->
-<section id="about" class="about">
-    <div class="reveal">
-        <h2>About Us</h2>
-        <p>
-        Livmore Luxury Interiors delivers premium interior design solutions 
-        blending elegance with functionality. We create spaces that reflect 
-        your lifestyle and vision.
-        </p>
-    </div>
-
-    <div class="reveal zoom">
-        <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6">
-    </div>
+<section id="about" class="section about reveal">
+<h2>About Us</h2>
+<p>We create premium interiors with modern design and high-end finishes tailored to your lifestyle.</p>
 </section>
 
-<!-- PORTFOLIO -->
-<section id="portfolio" class="section">
-    <h2 style="text-align:center;" class="reveal">Our Work</h2>
+<!-- WORK -->
+<section id="work" class="section">
+<h2 class="reveal" style="text-align:center;margin-bottom:40px;">Our Work</h2>
 
-    <div class="grid">
-        <div class="card reveal delay-1 zoom">
-            <img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f">
-        </div>
+<div class="grid">
 
-        <div class="card reveal delay-2 zoom">
-            <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0">
-        </div>
+<div class="card reveal"><img src="images/gola-kitchen.jpg"><div class="card-title">Gola Kitchen</div></div>
+<div class="card reveal"><img src="images/profile-door-puja.jpg"><div class="card-title">Profile Door with Tall Puja Unit</div></div>
+<div class="card reveal"><img src="images/laminated-wardrobe.jpg"><div class="card-title">Laminated Openable Wardrobe</div></div>
+<div class="card reveal"><img src="images/sliding-glass.jpg"><div class="card-title">Sliding Glass Wardrobe</div></div>
+<div class="card reveal"><img src="images/pu-wardrobe.jpg"><div class="card-title">PU Wardrobe</div></div>
+<div class="card reveal"><img src="images/wall-panel.jpg"><div class="card-title">Wall Paneling</div></div>
+<div class="card reveal"><img src="images/living-tv.jpg"><div class="card-title">Living TV Unit with Paneling</div></div>
+<div class="card reveal"><img src="images/veneer-ceiling.jpg"><div class="card-title">Living Veneer Ceiling</div></div>
+<div class="card reveal"><img src="images/kitchen-2.jpg"><div class="card-title">Modern Kitchen</div></div>
+<div class="card reveal"><img src="images/bedroom.jpg"><div class="card-title">Luxury Bedroom</div></div>
 
-        <div class="card reveal delay-3 zoom">
-            <img src="https://images.unsplash.com/photo-1601053073708-bb6b0d95d852">
-        </div>
-    </div>
+</div>
 </section>
 
 <!-- FOOTER -->
-<footer>
-    <h2>LIVMORE LUXURY</h2>
-    <p>Hyderabad | +91 7659855099</p>
+<footer class="footer">
+<h2 class="footer-logo">LIVMORE LUXURY</h2>
+<p class="footer-tag">Your Vision • Our Design</p>
+
+<div class="footer-info">
+<p>📍 Plot No.1282/A, Road No 64,<br>Jubilee Hills, Hyderabad - 500033</p>
+<p>📞 +91 7659855099</p>
+<p>📧 livmoreluxury@gmail.com</p>
+</div>
+
+<p class="footer-copy">© 2026 Livmore Luxury Interiors</p>
 </footer>
 
-<!-- SCROLL SCRIPT -->
+<!-- CHAT -->
+<div id="chat-btn" onclick="toggleChat()">💬</div>
+
+<div id="chat-box">
+<div class="chat-header">
+<span>Chat</span>
+<span onclick="toggleChat()">×</span>
+</div>
+<div class="chat-body">
+<p>How can we help you?</p>
+<button onclick="reply('kitchen')">Kitchen Design</button>
+<button onclick="reply('wardrobe')">Wardrobe</button>
+<button onclick="reply('consult')">Book Consultation</button>
+<div id="chat-response"></div>
+</div>
+</div>
+
 <script>
-const reveals = document.querySelectorAll('.reveal');
+function toggleChat(){
+let box=document.getElementById("chat-box");
+box.style.display = box.style.display==="flex"?"none":"flex";
+}
 
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if(entry.isIntersecting){
-            entry.target.classList.add('active');
-        }
-    });
-}, { threshold: 0.15 });
+function reply(type){
+let msg="";
+if(type==="kitchen") msg="We design premium modular kitchens.";
+if(type==="wardrobe") msg="We provide sliding & modular wardrobes.";
+if(type==="consult") msg="Contact us at livmoreluxury@gmail.com";
 
-reveals.forEach(el => observer.observe(el));
+document.getElementById("chat-response").innerHTML=msg;
+}
+
+/* SCROLL */
+const reveals=document.querySelectorAll('.reveal');
+const observer=new IntersectionObserver(entries=>{
+entries.forEach(e=>{
+if(e.isIntersecting){e.target.classList.add('active');}
+});
+},{threshold:0.15});
+
+reveals.forEach(el=>observer.observe(el));
 </script>
 
 </body>
