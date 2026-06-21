@@ -1267,7 +1267,163 @@ color:#aaa;
 
 }
 
+/*================ CLIENT REVIEWS ================*/
 
+.reviews{
+
+padding:100px 8%;
+
+background:#faf8f5;
+
+text-align:center;
+
+}
+
+.review-subtitle{
+
+margin-top:15px;
+
+color:#777;
+
+font-size:18px;
+
+margin-bottom:40px;
+
+}
+
+#reviewsList{
+
+max-width:900px;
+
+margin:auto;
+
+}
+
+.review-card{
+
+background:#fff;
+
+padding:30px;
+
+margin-bottom:25px;
+
+border-radius:15px;
+
+box-shadow:0 10px 30px rgba(0,0,0,.08);
+
+text-align:left;
+
+}
+
+.review-card h4{
+
+font-size:22px;
+
+margin-bottom:10px;
+
+}
+
+.review-card span{
+
+color:#C8A24D;
+
+font-size:20px;
+
+}
+
+.review-card p{
+
+margin-top:15px;
+
+line-height:1.8;
+
+color:#555;
+
+}
+
+.review-form{
+
+max-width:700px;
+
+margin:60px auto;
+
+display:flex;
+
+flex-direction:column;
+
+gap:20px;
+
+}
+
+.review-form input,
+
+.review-form textarea,
+
+.review-form select{
+
+padding:16px;
+
+font-size:16px;
+
+border:1px solid #ddd;
+
+border-radius:8px;
+
+font-family:inherit;
+
+}
+
+.review-form textarea{
+
+height:140px;
+
+resize:none;
+
+}
+
+.review-form button{
+
+background:#C8A24D;
+
+color:#111;
+
+padding:18px;
+
+font-weight:700;
+
+border:none;
+
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+.review-form button:hover{
+
+background:#111;
+
+color:#fff;
+
+}
+
+.delete-btn{
+
+margin-top:20px;
+
+padding:10px 18px;
+
+background:#d62828;
+
+color:#fff;
+
+border:none;
+
+cursor:pointer;
+
+border-radius:5px;
+
+}
 
 
 
