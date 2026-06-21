@@ -688,53 +688,82 @@ SEND ENQUIRY
 
 <!-- ================= CLIENT REVIEWS ================= -->
 
+<!-- ================= CLIENT REVIEWS ================= -->
+
 <section id="reviews" class="reviews">
 
-<h2 class="section-title">
-CLIENT REVIEWS
-</h2>
+    <div class="container">
 
-<p class="review-subtitle">
-Share your experience with LIVMORE LUXURY
-</p>
+        <h2 class="section-title">CLIENT REVIEWS</h2>
 
-<div id="reviewsList"></div>
+        <div class="gold-line"></div>
 
-<div class="review-form">
+        <p class="review-text">
+            Hear what our valued clients say about their experience with LIVMORE LUXURY.
+        </p>
 
-<input
-type="text"
-id="name"
-placeholder="Your Name"
-required>
+        <!-- Review Form -->
 
-<select id="rating">
+        <div class="review-form">
 
-<option value="5">★★★★★ Excellent</option>
+            <div class="form-group">
 
-<option value="4">★★★★☆ Very Good</option>
+                <input
+                    type="text"
+                    id="name"
+                    placeholder="Your Name"
+                    required>
 
-<option value="3">★★★☆☆ Good</option>
+            </div>
 
-<option value="2">★★☆☆☆ Average</option>
+            <div class="form-group">
 
-<option value="1">★☆☆☆☆ Poor</option>
+                <select id="rating">
 
-</select>
+                    <option value="5">★★★★★ Excellent</option>
+                    <option value="4">★★★★☆ Very Good</option>
+                    <option value="3">★★★☆☆ Good</option>
+                    <option value="2">★★☆☆☆ Average</option>
+                    <option value="1">★☆☆☆☆ Poor</option>
 
-<textarea
-id="message"
-placeholder="Write your review..."
-required>
-</textarea>
+                </select>
 
-<button onclick="addReview()">
+            </div>
 
-Submit Review
+            <div class="form-group full">
 
-</button>
+                <textarea
+                    id="message"
+                    rows="5"
+                    placeholder="Share your experience with LIVMORE LUXURY..."
+                    required>
+                </textarea>
 
-</div>
+            </div>
+
+            <div class="form-group full">
+
+                <button
+                    class="btn-review"
+                    onclick="addReview()">
+
+                    SUBMIT REVIEW
+
+                </button>
+
+            </div>
+
+        </div>
+
+        <!-- Display Reviews -->
+
+        <div id="reviewsList" class="reviews-list">
+
+            <!-- Reviews will appear here automatically -->
+
+        </div>
+
+    </div>
 
 </section>
 
