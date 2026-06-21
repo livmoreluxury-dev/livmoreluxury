@@ -1476,7 +1476,421 @@ grid-template-columns:1fr;
 grid-template-columns:1fr;
 
 }
+/* =====================================================
+   LIVMORE LUXURY RESPONSIVE IMPROVEMENTS
+   ADD THIS AT THE END OF style.css
+===================================================== */
 
+
+/* Prevent all overflow issues */
+html,
+body{
+    width:100%;
+    max-width:100%;
+    overflow-x:hidden;
+}
+
+
+/* Universal responsive images */
+img{
+    max-width:100%;
+    height:auto;
+    object-fit:cover;
+}
+
+
+/* Main container control */
+.container,
+section{
+    width:100%;
+}
+
+
+/* Fluid heading sizes */
+h1{
+    font-size:clamp(36px,5vw,80px);
+}
+
+h2{
+    font-size:clamp(28px,3vw,45px);
+}
+
+h3{
+    font-size:clamp(20px,2vw,28px);
+}
+
+
+/* Better button size for mobile */
+button,
+.btn,
+a.quote{
+    min-height:45px;
+    padding:14px 28px;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+}
+
+
+
+/* ===============================
+   TABLET
+   768px - 1024px
+================================ */
+
+@media(max-width:1024px){
+
+.header{
+    padding:20px 5%;
+}
+
+
+.logo{
+    width:55px;
+    height:auto;
+}
+
+
+.nav{
+    gap:18px;
+}
+
+
+.hero-content{
+    width:90%;
+}
+
+
+.hero-content h1{
+    font-size:55px;
+}
+
+
+.service-container{
+    grid-template-columns:repeat(2,1fr);
+}
+
+
+.about{
+    grid-template-columns:1fr;
+}
+
+
+.project-grid{
+    grid-template-columns:repeat(2,1fr);
+}
+
+
+.interior-grid{
+    grid-template-columns:1fr;
+}
+
+
+.contact{
+    grid-template-columns:1fr;
+}
+
+
+.footer-container{
+    grid-template-columns:repeat(2,1fr);
+}
+
+
+}
+
+
+
+
+
+
+/* ===============================
+   MOBILE
+   481px - 767px
+================================ */
+
+
+@media(max-width:767px){
+
+
+.header{
+
+height:auto;
+
+padding:15px 20px;
+
+flex-direction:column;
+
+}
+
+
+.logo{
+
+width:70px;
+
+}
+
+
+
+.nav{
+
+width:100%;
+
+display:none;
+
+flex-direction:column;
+
+text-align:center;
+
+background:#080808;
+
+padding:20px;
+
+}
+
+
+
+.nav.active{
+
+display:flex;
+
+}
+
+
+
+.hero{
+
+height:90vh;
+
+background-position:center;
+
+}
+
+
+
+.hero-content{
+
+width:90%;
+
+text-align:left;
+
+}
+
+
+
+.hero-content h1{
+
+font-size:42px;
+
+line-height:1.15;
+
+letter-spacing:3px;
+
+}
+
+
+
+.hero-content p{
+
+font-size:15px;
+
+}
+
+
+
+.service-container{
+
+grid-template-columns:1fr;
+
+}
+
+
+
+.project-grid{
+
+grid-template-columns:1fr;
+
+}
+
+
+
+.project-card img{
+
+height:300px;
+
+}
+
+
+
+.interior-item{
+
+display:block;
+
+}
+
+
+
+.interior-item img{
+
+width:100%;
+
+height:260px;
+
+}
+
+
+
+.feature-content{
+
+grid-template-columns:1fr;
+
+}
+
+
+
+.feature-content img{
+
+height:300px;
+
+}
+
+
+
+.stats-container{
+
+grid-template-columns:1fr;
+
+}
+
+
+
+.form-row{
+
+grid-template-columns:1fr;
+
+}
+
+
+
+.footer-container{
+
+grid-template-columns:1fr;
+
+}
+
+
+
+}
+
+
+
+
+
+
+
+/* ===============================
+   SMALL MOBILE
+   320px - 480px
+================================ */
+
+
+@media(max-width:480px){
+
+
+body{
+
+font-size:14px;
+
+}
+
+
+
+.logo{
+
+width:55px;
+
+}
+
+
+
+.hero{
+
+min-height:650px;
+
+}
+
+
+
+.hero-content h1{
+
+font-size:34px;
+
+}
+
+
+
+.hero-content h5{
+
+font-size:12px;
+
+letter-spacing:3px;
+
+}
+
+
+
+.btn{
+
+width:100%;
+
+}
+
+
+
+.section-title{
+
+font-size:28px;
+
+margin-bottom:35px;
+
+}
+
+
+
+.service-box{
+
+padding:30px 20px;
+
+}
+
+
+
+.project-card img{
+
+height:240px;
+
+}
+
+
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea{
+
+font-size:14px;
+
+}
+
+
+
+.footer{
+
+padding:50px 20px;
+
+}
+
+
+
+}
 
 
 }
