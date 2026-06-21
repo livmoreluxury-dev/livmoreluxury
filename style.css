@@ -1609,319 +1609,110 @@ a.quote{
 ================================ */
 
 
-@media(max-width:767px){
+/* MOBILE HEADER FIX */
 
+@media(max-width:767px){
 
 .header{
 
-height:auto;
-
-padding:15px 20px;
-
-flex-direction:column;
+height:80px;
+padding:10px 20px;
+flex-direction:row;
+justify-content:space-between;
 
 }
 
 
 .logo{
 
-width:70px;
+width:55px;
+height:auto;
 
 }
 
 
+.brand-name h2{
+
+font-size:16px;
+
+}
+
+
+.brand-name p{
+
+font-size:7px;
+
+}
+
+
+/* hide menu normally */
 
 .nav{
 
-width:100%;
-
 display:none;
-
-flex-direction:column;
-
-text-align:center;
-
-background:#080808;
-
-padding:20px;
 
 }
 
 
+/* show when clicked */
 
 .nav.active{
 
 display:flex;
 
-}
+position:absolute;
 
+top:80px;
 
+left:0;
 
-.hero{
+width:100%;
 
-height:90vh;
+background:#080808;
 
-background-position:center;
+padding:25px;
 
-}
+flex-direction:column;
 
+text-align:center;
 
-
-.hero-content{
-
-width:90%;
-
-text-align:left;
+z-index:999;
 
 }
 
+
+.menu-toggle{
+
+display:block;
+
+font-size:30px;
+
+color:#c9a24d;
+
+}
+
+
+/* hero text fix */
 
 
 .hero-content h1{
 
-font-size:42px;
+font-size:clamp(35px,9vw,45px);
 
-line-height:1.15;
+line-height:1.1;
 
-letter-spacing:3px;
+letter-spacing:2px;
 
 }
-
 
 
 .hero-content p{
 
 font-size:15px;
 
-}
-
-
-
-.service-container{
-
-grid-template-columns:1fr;
+line-height:1.6;
 
 }
 
-
-
-.project-grid{
-
-grid-template-columns:1fr;
-
-}
-
-
-
-.project-card img{
-
-height:300px;
-
-}
-
-
-
-.interior-item{
-
-display:block;
-
-}
-
-
-
-.interior-item img{
-
-width:100%;
-
-height:260px;
-
-}
-
-
-
-.feature-content{
-
-grid-template-columns:1fr;
-
-}
-
-
-
-.feature-content img{
-
-height:300px;
-
-}
-
-
-
-.stats-container{
-
-grid-template-columns:1fr;
-
-}
-
-
-
-.form-row{
-
-grid-template-columns:1fr;
-
-}
-
-
-
-.footer-container{
-
-grid-template-columns:1fr;
-
-}
-
-
-
-}
-
-
-
-
-
-
-
-/* ===============================
-   SMALL MOBILE
-   320px - 480px
-================================ */
-
-
-@media(max-width:480px){
-
-
-body{
-
-font-size:14px;
-
-}
-
-
-
-.logo{
-
-width:55px;
-
-}
-
-
-
-.hero{
-
-min-height:650px;
-
-}
-
-
-
-.hero-content h1{
-
-font-size:34px;
-
-}
-
-
-
-.hero-content h5{
-
-font-size:12px;
-
-letter-spacing:3px;
-
-}
-
-
-
-.btn{
-
-width:100%;
-
-}
-
-
-
-.section-title{
-
-font-size:28px;
-
-margin-bottom:35px;
-
-}
-
-
-
-.service-box{
-
-padding:30px 20px;
-
-}
-
-
-
-.project-card img{
-
-height:240px;
-
-}
-
-
-
-.contact-form input,
-.contact-form select,
-.contact-form textarea{
-
-font-size:14px;
-
-}
-
-
-
-.footer{
-
-padding:50px 20px;
-
-}
-
-
-
-}
-
-
-}
-/* MOBILE MENU BUTTON */
-
-.menu-toggle{
-
-display:none;
-
-font-size:32px;
-
-color:#c9a24d;
-
-cursor:pointer;
-
-}
-
-
-
-@media(max-width:767px){
-
-.menu-toggle{
-
-display:block;
-
-position:absolute;
-
-right:25px;
-
-top:25px;
-
-}
 
 }
