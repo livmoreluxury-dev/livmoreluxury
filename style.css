@@ -1894,3 +1894,34 @@ padding:50px 20px;
 
 
 }
+/* MOBILE MENU BUTTON */
+
+.menu-toggle{
+
+display:none;
+
+font-size:32px;
+
+color:#c9a24d;
+
+cursor:pointer;
+
+}
+
+
+
+@media(max-width:767px){
+
+.menu-toggle{
+
+display:block;
+
+position:absolute;
+
+right:25px;
+
+top:25px;
+
+}
+
+}
