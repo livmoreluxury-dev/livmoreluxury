@@ -237,3 +237,90 @@ nav.classList.toggle("active");
 });
 
 }
+/*================ CLIENT REVIEWS ================*/
+
+let reviews = JSON.parse(localStorage.getItem("reviews")) || [];
+
+function displayReviews(){
+
+const list=document.getElementById("reviewsList");
+
+if(!list) return;
+
+list.innerHTML="";
+
+reviews.forEach((review,index)=>{
+
+list.innerHTML+=`
+
+<div class="review-card">
+
+<h4>${review.name}</h4>
+
+<span>${"★".repeat(review.rating)}</span>
+
+<p>${review.message}</p>
+
+<button class="delete-btn" onclick="deleteReview(${index})">
+
+Delete
+
+</button>
+
+</div>
+
+`;
+
+});
+
+}
+
+function addReview(){
+
+const name=document.getElementById("name").value.trim();
+
+const rating=document.getElementById("rating").value;
+
+const message=document.getElementById("message").value.trim();
+
+if(name==="" || message===""){
+
+alert("Please fill all fields.");
+
+return;
+
+}
+
+reviews.unshift({
+
+name:name,
+
+rating:rating,
+
+message:message
+
+});
+
+localStorage.setItem("reviews",JSON.stringify(reviews));
+
+displayReviews();
+
+document.getElementById("name").value="";
+
+document.getElementById("message").value="";
+
+document.getElementById("rating").value="5";
+
+}
+
+function deleteReview(index){
+
+reviews.splice(index,1);
+
+localStorage.setItem("reviews",JSON.stringify(reviews));
+
+displayReviews();
+
+}
+
+displayReviews();
