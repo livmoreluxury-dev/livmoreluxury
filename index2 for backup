@@ -119,41 +119,21 @@ GET QUOTE
 
 <section class="hero" id="home">
 
-
 <div class="hero-dark"></div>
-
-
 
 <div class="hero-content">
 
 
-  
-<h5>
-WHERE LUXURY FINDS ITS HOME
-</h5>
+<h3 class="hero-subtitle">WHERE LUXURY FINDS ITS HOME</h3>
 
-
-
-<h1>
-
-YOUR VISION
-<br>
-
-OUR DESIGN
-
-</h1>
-
-
-
-<p>
-
-We create luxury interiors and build
-timeless spaces that reflect your style
-and elevate everyday living.
-
+<h1 class="hero-title">Designed for Modern Living</h1>
+            
+<h2 class="hero-tagline">India's First Fully Automated Home Design Company</h2>>
+            
+<p class="hero-description">
+            We create luxury interiors and build timeless spaces that reflect
+            your style and elevate everyday living.
 </p>
-
-
 
 <a href="#projects" class="btn">
 
@@ -290,83 +270,10 @@ with precision and care.
 </p>
 
 
-</div>
-
-
-
-
-
-
-
-
-<div class="service-box">
-
-
-<div class="icon">
-
-📐
 
 </div>
 
-
-<h3>
-
-ARCHITECTURE
-
-</h3>
-
-
-<p>
-
-Thoughtful designs that blend
-creativity and functionality.
-
-</p>
-
-
 </div>
-
-
-
-
-
-
-
-
-<div class="service-box">
-
-
-<div class="icon">
-
-🔑
-
-</div>
-
-
-<h3>
-
-TURNKEY SOLUTIONS
-
-</h3>
-
-
-<p>
-
-End-to-end solutions for a
-hassle-free experience.
-
-</p>
-
-
-</div>
-
-
-
-
-
-</div>
-
-
 
 </section>
 
@@ -1171,75 +1078,31 @@ every project with perfection.
 
 
 <!-- ================= QUOTE SECTION ================= -->
-
-
 <section id="contact" class="contact">
-
-
 <div class="contact-left">
-
-
 <h2>
-
 GET A QUOTE
-
 </h2>
-
-
-
 <div class="gold-line"></div>
-
-
-
 <p>
-
 Have a project in mind?
 Share your details with us and
 we will get back to you with
 the best solution.
-
 </p>
-
-
-
-
 <p>
-
-📞 +91 98765 43210
-
+📞 +91 7659855099
 </p>
-
-
-
 <p>
 
 ✉ livmoreluxury@gmail.com
-
 </p>
-
-
-
 <p>
 
-📍 Hyderabad, Telangana, India
-
+📍 Plot No 1282/A, Road No.64, Jubleehills, Hyderabad
 </p>
-
-
-
 </div>
-
-
-
-
-
-
-
-
 <div class="contact-form">
-
-
-
 <form 
 action="https://formsubmit.co/livmoreluxury@gmail.com"
 method="POST">
